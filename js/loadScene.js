@@ -112,6 +112,11 @@ require([
 					entityCache[each].removeFromWorld();
 				}
 
+				var groundEntities = [];
+				var sand = loader.getCachedObjectForRef('ms_scene/entities/sand_0.entity');
+				groundEntities.push(sand);
+				buildPhysicsGround(groundEntities);
+
 				// Load the entities from the cache
 				var landerEntity = EntityUtils.clone(goo.world, entityCache['lander']);
 				console.log(landerEntity);
@@ -132,6 +137,7 @@ require([
 
 				// Go go go!
 				console.log('Starting game loop');
+				PhysicalWorld.startPhysicsLoop();
 				goo.startGameLoop();
 
 			}).then(null, function(e) {
@@ -141,6 +147,21 @@ require([
 
 		}
 	}
+
+
+	function buildPhysicsGround(groundEntities) {
+		for (var i = 0; i < groundEntities.length; i++) {
+			var entity = groundEntities[i];
+			console.log("Building ground for " + entity);
+			var meshData = entity.getComponent("meshDataComponent").meshData;
+			var pos = entity.transformComponent.transform.translation;
+			console.log("Ground transform: " + pos);
+			PhysicalWorld.addPhysicalWorldMesh(meshData, pos);
+		}
+
+		
+		PhysicalWorld.addStaticBox(new Vector3(0, 10, 0), 300);
+	};
 
 	init();
 });

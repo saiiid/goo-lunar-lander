@@ -90,7 +90,7 @@ define([
 		}
 
 
-		function addPhysicalWorldMesh(meshData) {
+		function addPhysicalWorldMesh(meshData, pos) {
 			var groundShape = createTriangleMeshShape(meshData);
 			var groundTransform = new Ammo.btTransform();
 			groundTransform.setIdentity();
@@ -99,8 +99,8 @@ define([
 			var localInertia = new Ammo.btVector3(0, 0, 0);
 			var motionState = new Ammo.btDefaultMotionState( groundTransform );
 			var rbInfo = new Ammo.btRigidBodyConstructionInfo(groundMass, motionState, groundShape, localInertia);
-			var groundAmmo = new Ammo.btRigidBody( rbInfo );
-			ammoWorld.addRigidBody(groundAmmo);
+			var rigidBody = new Ammo.btRigidBody( rbInfo );
+			ammoWorld.addRigidBody(rigidBody);
 		}
 
 		function initPhysics() {
@@ -115,9 +115,6 @@ define([
 			var solver = new Ammo.btSequentialImpulseConstraintSolver();
 			ammoWorld = new Ammo.btDiscreteDynamicsWorld( dispatcher, overlappingPairCache, solver, collisionConfiguration );
 			ammoWorld.setGravity(new Ammo.btVector3(0, -9.81, 0));
-
-			// TODO:  Try updating in a Worker()
-			setInterval(function(){ammoWorld.stepSimulation(1/60, 5)}, 1000/60);
 		}
 
 		function createAmmoComponentScript(rigidBody) {
@@ -192,6 +189,25 @@ define([
 			ammoWorld.addRigidBody(rigidBody);
 		}
 
+		function startPhysicsLoop() {
+			// TODO:  Try updating in a Worker()
+			setInterval(function(){ammoWorld.stepSimulation(1/60, 5)}, 1000/60);
+		}
+
+		function addStaticBox(pos, size){
+			var groundShape = new Ammo.btBoxShape(new Ammo.btVector3( size, 1, size)); // Create block 50x2x50
+			var groundTransform = new Ammo.btTransform();
+			groundTransform.setIdentity();
+			groundTransform.setOrigin(new Ammo.btVector3(pos.x, pos.y, pos.z));
+
+			var groundMass = 0; // Mass of 0 means ground won't move from gravity or collisions
+			var localInertia = new Ammo.btVector3(0, 0, 0);
+			var motionState = new Ammo.btDefaultMotionState( groundTransform );
+			var rbInfo = new Ammo.btRigidBodyConstructionInfo(groundMass, motionState, groundShape, localInertia);
+			var groundAmmo = new Ammo.btRigidBody( rbInfo );
+			ammoWorld.addRigidBody(groundAmmo);
+		}
+
 		return {
 			initPhysics:initPhysics,
 			addPhysicalWorldMesh:addPhysicalWorldMesh,
@@ -199,6 +215,8 @@ define([
 			createAmmoComponentScript:createAmmoComponentScript,
 			attachSphericalMovementScript:attachSphericalMovementScript,
 			removeAmmoComponent:removeAmmoComponent,
-			addRigidBody:addRigidBody
+			addRigidBody:addRigidBody,
+			startPhysicsLoop:startPhysicsLoop,
+			addStaticBox:addStaticBox
 		}
 	});

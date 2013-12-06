@@ -25,16 +25,17 @@ PhysicalWorld
 
 	Lander.prototype.initPhysics = function() {
 		console.log('Initializing Lander physics');
-		this.rigidBody = {}
-		this.buildRigidBody(this.position, this.scale);
+		this.rigidBody = this.buildRigidBody();
 	};
 
-	Lander.prototype.buildRigidBody = function(position, scale) {
-		var radius = 2.0 * scale;
+	Lander.prototype.buildRigidBody = function() {
+		var radius = 1.0;
 		var mass = 10;
-		this.rigidBody = PhysicalWorld.createAmmoJSSphere(radius, [position.x, position.y, position.z], mass);
-		PhysicalWorld.addRigidBody(this.rigidBody);
-		this.addScript(PhysicalWorld.createAmmoComponentScript(this.rigidBody));
+		var position = this.entity.transformComponent.transform.translation;
+		var rigidBody = PhysicalWorld.createAmmoJSSphere(radius, [position.x, position.y, position.z], mass);
+		PhysicalWorld.addRigidBody(rigidBody);
+		this.addScript(PhysicalWorld.createAmmoComponentScript(rigidBody));
+		return rigidBody;
 	};
 
 	Lander.prototype.addRoll = function(angle) {
@@ -59,7 +60,7 @@ PhysicalWorld
 	// Fire numbered thruster
 	Lander.prototype.fireThruster = function(thruster) {
 		console.log('Firing thruster ' + thruster);
-	}
+	};
 
 	return Lander;
 
