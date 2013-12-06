@@ -34,7 +34,7 @@ define([
 		 * @return {Ammo.btBvhTriangleMeshShape}
 		 */
 
-		function createTriangleMeshShape(meshData) {
+		function createTriangleMeshShape(meshData, scale) {
 			var vertices = meshData.dataViews.POSITION;
 			var indices = meshData.indexData.data;
 
@@ -48,25 +48,16 @@ define([
 
 			var floatByteSize = 4;
 			var vertexBuffer = Ammo.allocate( floatByteSize * vertices.length, "float", Ammo.ALLOC_NORMAL );
-
-			var scale = 1;
-
 			for ( var i = 0, il = vertices.length; i < il; i ++ ) {
-
-				Ammo.setValue( vertexBuffer + i * floatByteSize, scale * vertices[ i ], 'float' );
-
+				Ammo.setValue(vertexBuffer + i * floatByteSize, scale * vertices[ i ], 'float');
 			}
+
 			var use32bitIndices = true;
 			var intByteSize = use32bitIndices ? 4 : 2;
 			var intType = use32bitIndices ? "i32" : "i16";
-
-
 			var indexBuffer = Ammo.allocate( intByteSize * indices.length, intType, Ammo.ALLOC_NORMAL );
-
 			for ( var i = 0, il = indices.length; i < il; i ++ ) {
-
-				Ammo.setValue( indexBuffer + i * intByteSize, indices[ i ], intType );
-
+				Ammo.setValue(indexBuffer + i * intByteSize, indices[ i ], intType);
 			}
 
 			var indexStride = intByteSize * 3;
@@ -90,11 +81,12 @@ define([
 		}
 
 
-		function addPhysicalWorldMesh(meshData, pos) {
-			var groundShape = createTriangleMeshShape(meshData);
+		function addPhysicalWorldMesh(meshData, pos, scale) {
+			// NOTE:  Assuming uniform scale, using the x value .
+			var groundShape = createTriangleMeshShape(meshData, scale.x);
 			var groundTransform = new Ammo.btTransform();
 			groundTransform.setIdentity();
-			groundTransform.setOrigin(new Ammo.btVector3(0, 0, 0));
+			groundTransform.setOrigin(new Ammo.btVector3(pos.x, pos.y, pos.z));
 			var groundMass = 0; // Mass of 0 means ground won't move from gravity or collisions
 			var localInertia = new Ammo.btVector3(0, 0, 0);
 			var motionState = new Ammo.btDefaultMotionState( groundTransform );

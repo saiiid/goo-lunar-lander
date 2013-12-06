@@ -106,7 +106,7 @@ require([
 				// Set up the canvas and renderer
 				goo.renderer.domElement.id = 'goo';
 				document.body.appendChild(goo.renderer.domElement);
-			
+
 				var landerEntity = loader.getCachedObjectForRef('ms_scene/entities/moonlander_mesh_0.entity');
 				var lightEntity0 = loader.getCachedObjectForRef('ms_scene/entities/lights_mesh_0.entity');
 				var lightEntity1 = loader.getCachedObjectForRef('ms_scene/entities/lights_mesh1_0.entity');
@@ -158,13 +158,17 @@ require([
 			var entity = groundEntities[i];
 			console.log("Building ground for " + entity);
 			var meshData = entity.getComponent("meshDataComponent").meshData;
-			var pos = entity.transformComponent.transform.translation;
+			console.log(meshData);
+			console.log(entity.transformComponent.transform);
+			console.log(entity.transformComponent.transform.scale);
+			var transform = entity.transformComponent.transform;
+			var pos = transform.translation;
+			var scale = transform.scale;
 			console.log("Ground transform: " + pos);
-			//PhysicalWorld.addPhysicalWorldMesh(meshData, pos);
+			console.log("Ground scale: " + scale);
+			PhysicalWorld.addPhysicalWorldMesh(meshData, pos, scale);
 		}
-
-		
-		PhysicalWorld.addStaticBox(new Vector3(0, -1.9, 0), 300);
+		PhysicalWorld.addStaticBox(new Vector3(0, 10, 0), 300);
 	};
 
 	init();

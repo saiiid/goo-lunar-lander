@@ -14,7 +14,6 @@ Prop,
 PhysicalWorld
 ) {
 
-
 	function Lander(entity) {
 		console.log("Creating Lander");
 		Prop.call(this, entity);
