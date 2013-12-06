@@ -16,16 +16,11 @@ function(
 		this.farRightKey = properties.farRightKey;
 
 		// Controls amount of firing events per second
-		// TODO per thruster?
 		this.firingRate = !isNaN(properties.firingRate) ? properties.firingRate : 10;
-		this.firingTimer = 1.0 / this.firingRate;
+		this.firingInterval = 1.0 / this.firingRate;
 
-		this.keyState = {
-			nl: 0,
-			fl: 0,
-			nr: 0,
-			fr: 0
-		};
+		this.firingTimer = [this.firingInterval, this.firingInterval, this.firingInterval, this.firingInterval];
+		this.keyState = [0, 0, 0, 0];
 
 	};
 
@@ -37,16 +32,16 @@ function(
 
 		switch (event.keyCode) {
 			case this.nearLeftKey:
-				this.keyState.nl = down ? 1 : 0;
+				this.keyState[0] = down ? 1 : 0;
 				break;
 			case this.farLeftKey:
-				this.keyState.fl = down ? 1 : 0;
+				this.keyState[1] = down ? 1 : 0;
 				break;
 			case this.nearRightKey:
-				this.keyState.nr = down ? 1 : 0;
+				this.keyState[2] = down ? 1 : 0;
 				break;
 			case this.farRightKey:
-				this.keyState.fr = down ? 1 : 0
+				this.keyState[3] = down ? 1 : 0
 				break;
 		}
 	};
@@ -72,12 +67,18 @@ function(
 			}
 		}
 
-		this.firingTimer -= tpf;
-		if (this.firingTimer < 0.0) {
-			if (this.keyState.nl) { this.lander.fireThruster(0); this.firingTimer = 1.0/this.firingRate; }
-			if (this.keyState.fl) { this.lander.fireThruster(1); this.firingTimer = 1.0/this.firingRate; }
-			if (this.keyState.nr) { this.lander.fireThruster(3); this.firingTimer = 1.0/this.firingRate; }
-			if (this.keyState.fr) { this.lander.fireThruster(2); this.firingTimer = 1.0/this.firingRate; }
+		for (var each in this.firingTimer) {
+			this.firingTimer[each] -= tpf;
+		}
+
+		for (var i=0; i<this.firingTimer.length; i++) {
+			this.firingTimer[i] -= tpf;
+			if (this.firingTimer[i] < 0.0 && this.keyState[i]) {
+				this.lander.turnOnThruster(i); 
+				this.firingTimer[i] = this.firingInterval;
+			} else {
+				this.lander.turnOffThruster(i);
+			}
 		}
 
 	};

@@ -121,13 +121,19 @@ require([
 				thrusterEntitites.push(loader.getCachedObjectForRef('entities/Cylinder_1.entity'));
 				thrusterEntitites.push(loader.getCachedObjectForRef('entities/Cylinder_2.entity'));
 
+				var thrusterLightEntities = [];
+				thrusterLightEntities.push(loader.getCachedObjectForRef('entities/PointLight.entity'));
+				thrusterLightEntities.push(loader.getCachedObjectForRef('entities/PointLight_0.entity'));
+				thrusterLightEntities.push(loader.getCachedObjectForRef('entities/PointLight_1.entity'));
+				thrusterLightEntities.push(loader.getCachedObjectForRef('entities/PointLight_2.entity'));
+
 				var groundEntities = [];
 				var sandEntity = loader.getCachedObjectForRef('ms_scene/entities/sand_0.entity');
 				groundEntities.push(sandEntity);
 				buildPhysicsGround(groundEntities);
 
 
-				var lander = new Lander(landerEntity, thrusterEntitites, goo);
+				var lander = new Lander(landerEntity, thrusterEntitites, thrusterLightEntities, goo);
 				lander.translate(0, 2, 0);
 				lander.initPhysics();
 

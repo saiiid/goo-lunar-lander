@@ -29,13 +29,19 @@ PhysicalWorld,
 AmmoDebugShapeCreator
 ) {
 
-	function Lander(entity, thrusterEntities, goo) {
+	function Lander(entity, thrusterEntities, thrusterLightEntities, goo) {
 		console.log("Creating Lander");
 		Prop.call(this, entity, goo);
 		this.name = "Lander";
 		this.thrusterEntities = thrusterEntities;
+		this.thrusterLightEntities = thrusterLightEntities;
+		for (var each in this.thrusterLightEntities) {
+			this.thrusterLightEntities[each].lightComponent.light.intensity = 0.0;
+		}
 		console.log("Thruster entities");
 		console.log(this.thrusterEntities);
+		console.log("Thruster light entities");
+		console.log(this.thrusterLightEntities);
 		// For thruster particles
 		this.thrusterParticleMaterial = Material.createMaterial(ShaderLib.particles);
 		this.thrusterParticleTexture = new TextureCreator().loadTexture2D('res\\flare.png'); 
@@ -97,7 +103,7 @@ AmmoDebugShapeCreator
 		    	totalParticlesToSpawn : 3,
 				releaseRatePerSecond : 10,
 				minLifetime : 0.5,
-				maxLifetime : 1.0,
+				maxLifetime : 2.0,
 				getEmissionVelocity : function (particle, particleEntity) {
 					var vec3 = particle.velocity;
 					ParticleUtils.getRandomVelocityOffY(vec3, 0, Math.PI * 5 / 180, 5);
@@ -128,11 +134,16 @@ AmmoDebugShapeCreator
 		particleSystemEntity.addToWorld();
 	};
 
-	// Fire numbered thruster
-	Lander.prototype.fireThruster = function(thruster) {
+	Lander.prototype.turnOnThruster = function(thruster) {
 		console.log('Firing thruster ' + thruster);
 		this.addParticles(thruster);
+		this.thrusterLightEntities[thruster].lightComponent.light.intensity = Math.random()*0.5 + 2;
 	};
+
+	Lander.prototype.turnOffThruster = function(thruster) {
+		this.thrusterLightEntities[thruster].lightComponent.light.intensity = 0;
+	};
+
 
 	return Lander;
 
