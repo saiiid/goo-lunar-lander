@@ -1,10 +1,13 @@
 define([
 'goo/math/Vector3',
-'goo/entities/components/TransformComponent'
+'goo/entities/components/TransformComponent',
+'goo/entities/components/ScriptComponent'
+
 ],
 function (
 Vector3,
-TransformComponent
+TransformComponent,
+ScriptComponent
 ) {
 
 	function Lander(entity, properties, goo) {
@@ -14,6 +17,7 @@ TransformComponent
 	};
 
 	Lander.prototype.init = function(position, scale) {
+
 		console.log('Initializing Lander');
 		this.entity.transformComponent.setScale(scale, scale, scale);
 		this.entity.transformComponent.addTranslation(position.x, position.y, position.z);
@@ -23,6 +27,9 @@ TransformComponent
 		this.roll = 0.0;
 		this.pitch = 0.0;
 		this.yaw = 0.0;
+
+		this.scriptComponent = new ScriptComponent();
+		this.entity.setComponent(this.scriptComponent);
 	};
 
 	Lander.prototype.addRoll = function(angle) {
@@ -35,6 +42,10 @@ TransformComponent
 
 	Lander.prototype.addYaw = function(angle) {
 		this.yaw += angle;
+	};
+
+	Lander.prototype.addScript = function(script) {
+		this.scriptComponent.scripts.push(script);
 	};
 
 	// Set rotation according to roll, pitch and yaw params

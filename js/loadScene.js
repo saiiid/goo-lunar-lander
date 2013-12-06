@@ -16,7 +16,8 @@ require([
 	'goo/renderer/light/DirectionalLight',
 	'goo/entities/components/LightComponent',
 
-	'js/Lander'
+	'js/Lander',
+	'js/LanderKeyScript'
 
 ], function (
 	GooRunner,
@@ -36,7 +37,8 @@ require([
 	DirectionalLight,
 	LightComponent,
 
-	Lander
+	Lander,
+	LanderKeyScript
 ) {
 	'use strict';
 
@@ -109,6 +111,14 @@ require([
 				var lander = new Lander(landerEntity);
 				// Init lander with position and scale
 				lander.init(new Vector3(15, 20, -15), 15.0);
+
+				lander.addScript(new LanderKeyScript(lander, {
+					nearLeftKey: 65, 	// A
+					farLeftKey: 81,  	// Q
+					nearRightKey: 68,	// D
+					farRightKey: 69 	// E
+				}));
+
 
 				// Go go go!
 				console.log('Starting game loop');
