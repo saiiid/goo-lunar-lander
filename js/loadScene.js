@@ -120,12 +120,14 @@ require([
 				thrusterEntitites.push(loader.getCachedObjectForRef('entities/Cylinder_0.entity'));
 				thrusterEntitites.push(loader.getCachedObjectForRef('entities/Cylinder_1.entity'));
 				thrusterEntitites.push(loader.getCachedObjectForRef('entities/Cylinder_2.entity'));
+				thrusterEntitites.push(loader.getCachedObjectForRef('entities/Cylinder_3.entity'));
 
 				var thrusterLightEntities = [];
 				thrusterLightEntities.push(loader.getCachedObjectForRef('entities/PointLight.entity'));
 				thrusterLightEntities.push(loader.getCachedObjectForRef('entities/PointLight_0.entity'));
 				thrusterLightEntities.push(loader.getCachedObjectForRef('entities/PointLight_1.entity'));
 				thrusterLightEntities.push(loader.getCachedObjectForRef('entities/PointLight_2.entity'));
+				thrusterLightEntities.push(loader.getCachedObjectForRef('entities/PointLight_3.entity'));
 
 				var groundEntities = [];
 				var sandEntity = loader.getCachedObjectForRef('ms_scene/entities/sand_0.entity');
@@ -147,6 +149,7 @@ require([
 				}
 
 				lander.addScript(new LanderKeyScript(lander, {
+					mainKey: 32,		// space
 					nearLeftKey: 65, 	// A
 					farLeftKey: 81,  	// Q
 					nearRightKey: 68,	// D

@@ -10,6 +10,7 @@ function(
 
 		this.lander = lander;
 
+		this.mainKey = properties.mainKey;
 		this.nearLeftKey = properties.nearLeftKey;
 		this.farLeftKey = properties.farLeftKey;
 		this.nearRightKey = properties.nearRightKey;
@@ -19,8 +20,8 @@ function(
 		this.firingRate = !isNaN(properties.firingRate) ? properties.firingRate : 10;
 		this.firingInterval = 1.0 / this.firingRate;
 
-		this.firingTimer = [this.firingInterval, this.firingInterval, this.firingInterval, this.firingInterval];
-		this.keyState = [0, 0, 0, 0];
+		this.firingTimer = [this.firingInterval, this.firingInterval, this.firingInterval, this.firingInterval, this.firingInterval];
+		this.keyState = [0, 0, 0, 0, 0];
 
 	};
 
@@ -31,6 +32,9 @@ function(
 		}
 
 		switch (event.keyCode) {
+			case this.mainKey:
+				this.keyState[4] = down ? 1 : 0;
+				break;
 			case this.nearLeftKey:
 				this.keyState[0] = down ? 1 : 0;
 				break;

@@ -159,6 +159,46 @@
         "name": "Cylinder",
         "ref": "entities/Cylinder_2.entity"
     },
+    "entities/Cylinder_3.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": null,
+                "shape": "Cylinder",
+                "shapeOptions": {
+                    "radialSamples": 16
+                }
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "materials/Material_0.material"
+                ],
+                "receiveShadows": true
+            },
+            "transform": {
+                "parentRef": "ms_scene/entities/moonlander_mesh_0.entity",
+                "rotation": [
+                    90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    0.0439264141023159,
+                    0.0439264141023159,
+                    0.012028195895254612
+                ],
+                "translation": [
+                    0.007648734841495752,
+                    0.07430653274059296,
+                    0.015639636665582657
+                ]
+            }
+        },
+        "name": "Cylinder",
+        "ref": "entities/Cylinder_3.entity"
+    },
     "entities/DefaultToolCamera.entity": {
         "components": {
             "camera": {
@@ -427,6 +467,69 @@
         },
         "name": "PointLight",
         "ref": "entities/PointLight_2.entity"
+    },
+    "entities/PointLight_3.entity": {
+        "components": {
+            "light": {
+                "attenuate": true,
+                "color": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "direction": [
+                    0,
+                    0,
+                    0
+                ],
+                "intensity": 3.03,
+                "lightCookie": null,
+                "range": 10,
+                "shadowCaster": false,
+                "shadowSettings": {
+                    "darkness": 0,
+                    "far": 10,
+                    "fov": 55,
+                    "near": 1,
+                    "projection": "Perspective",
+                    "resolution": [
+                        256,
+                        256
+                    ],
+                    "shadowType": "VSM",
+                    "size": 400,
+                    "type": "Blur",
+                    "upVector": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "specularIntensity": 1,
+                "type": "PointLight"
+            },
+            "transform": {
+                "parentRef": "entities/Cylinder_3.entity",
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0.7500128968458739,
+                    -2.5335045847896254e-06,
+                    3.14375376701355
+                ]
+            }
+        },
+        "name": "PointLight",
+        "ref": "entities/PointLight_3.entity"
     },
     "entities/Sphere.entity": {
         "components": {
@@ -1578,7 +1681,7 @@
                 ],
                 "translation": [
                     2.2364346981048584,
-                    0.0781191810965538,
+                    0.08890815824270248,
                     -1.3342479467391968
                 ]
             }
@@ -4397,7 +4500,9 @@
             "entities/PointLight.entity",
             "entities/PointLight_0.entity",
             "entities/PointLight_1.entity",
-            "entities/PointLight_2.entity"
+            "entities/PointLight_2.entity",
+            "entities/PointLight_3.entity",
+            "entities/Cylinder_3.entity"
         ],
         "name": "ms_scene",
         "ref": "ms_scene/ms_scene.group"
@@ -4849,7 +4954,9 @@
             "entities/PointLight.entity",
             "entities/PointLight_0.entity",
             "entities/PointLight_1.entity",
-            "entities/PointLight_2.entity"
+            "entities/PointLight_2.entity",
+            "entities/PointLight_3.entity",
+            "entities/Cylinder_3.entity"
         ],
         "fogColor": [
             1,
@@ -4886,12 +4993,12 @@
             "posteffects/Bleach.posteffect"
         ],
         "public": true,
-        "publishedTime": "2013-12-06T13:32:06.357576",
+        "publishedTime": "2013-12-06T14:06:49.352460",
         "publishedURL": "http://goote.ch/CpruIsc6TBKZ1smDHZF8GQ",
         "ref": "project.project",
         "screenshot": "images/screenshot.png",
         "shareButtons": false,
-        "shareURL": "http://goote.ch/CpruIsc6TBKZ1smDHZF8GQ?v=2013-12-06T13:32:06.357598",
+        "shareURL": "http://goote.ch/CpruIsc6TBKZ1smDHZF8GQ?v=2013-12-06T14:06:49.352482",
         "skybox": {
             "environmentType": 1,
             "imageUrls": [
@@ -4950,9 +5057,9 @@
             "invertedX": false,
             "invertedY": false,
             "lookAtPoint": [
-                17.068307876586914,
-                12.611132621765137,
-                -9.455326080322266
+                17.358675003051758,
+                11.32418155670166,
+                -7.465611934661865
             ],
             "maxAscent": 1.5699236621688994,
             "maxAzimuth": 4.71238898038469,
@@ -4961,9 +5068,9 @@
             "minAzimuth": 1.5707963267948966,
             "minZoomDistance": 0.1,
             "spherical": [
-                67.89710998535156,
-                2.728991746902466,
-                0.3500013053417206
+                61.13661575317383,
+                2.7889931201934814,
+                0.3650016486644745
             ],
             "turnSpeedHorizontal": 0.005,
             "turnSpeedVertical": 0.005,

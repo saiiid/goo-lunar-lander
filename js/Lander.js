@@ -101,9 +101,9 @@ AmmoDebugShapeCreator
 			this.goo,
 		    {
 		    	totalParticlesToSpawn : 3,
-				releaseRatePerSecond : 10,
+				releaseRatePerSecond : 5,
 				minLifetime : 0.5,
-				maxLifetime : 2.0,
+				maxLifetime : 1.0,
 				getEmissionVelocity : function (particle, particleEntity) {
 					var vec3 = particle.velocity;
 					ParticleUtils.getRandomVelocityOffY(vec3, 0, Math.PI * 5 / 180, 5);
@@ -114,11 +114,11 @@ AmmoDebugShapeCreator
 					timeOffset : 0.0,
 					spin : 0,
 					mass : 20,
-					size : 3.0,
+					size : 4.0,
 					color : [1, 1, 0, 1]
 				}, {
 					timeOffset : 0.25,
-					color : [1, 0, 0, 1]
+					color : [1, 1, 1, 1]
 				}, {
 					timeOffset : 0.25,
 					color : [0, 0, 0, 1]
