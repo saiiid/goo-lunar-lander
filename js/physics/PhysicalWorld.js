@@ -2,12 +2,18 @@ define([
 	'goo/entities/components/ScriptComponent',
 	'goo/entities/EntityUtils',
 	'goo/math/Quaternion',
-	'goo/math/Vector3'],
+	'goo/math/Vector3',
+
+	'js/AmmoDebugShapeCreator'
+
+],
 	function(
 		ScriptComponent,
 		EntityUtils,
 		Quaternion,
-		Vector3
+		Vector3,
+
+		AmmoDebugShapeCreator
 		) {
 		"use strict";
 
@@ -129,9 +135,9 @@ define([
 			var startTransform = new Ammo.btTransform();
 			startTransform.setIdentity();
 
-			startTransform.getOrigin().setX(pos[0]);
-			startTransform.getOrigin().setY(pos[1]);
-			startTransform.getOrigin().setZ(pos[2]);
+			startTransform.getOrigin().setX(pos.x);
+			startTransform.getOrigin().setY(pos.y);
+			startTransform.getOrigin().setZ(pos.z);
 
 			var localInertia = new Ammo.btVector3(0, 0, 0);
 
@@ -186,8 +192,12 @@ define([
 			setInterval(function(){ammoWorld.stepSimulation(1/60, 5)}, 1000/60);
 		}
 
-		function addStaticBox(pos, size){
-			var groundShape = new Ammo.btBoxShape(new Ammo.btVector3( size, 1, size)); // Create block 50x2x50
+		function addStaticBox(pos, width, height, depth, world){
+
+			console.log("world ");
+			console.log(world);
+
+			var groundShape = new Ammo.btBoxShape(new Ammo.btVector3(width / 2, height / 2 , depth / 2));
 			var groundTransform = new Ammo.btTransform();
 			groundTransform.setIdentity();
 			groundTransform.setOrigin(new Ammo.btVector3(pos.x, pos.y, pos.z));
@@ -198,6 +208,8 @@ define([
 			var rbInfo = new Ammo.btRigidBodyConstructionInfo(groundMass, motionState, groundShape, localInertia);
 			var groundAmmo = new Ammo.btRigidBody( rbInfo );
 			ammoWorld.addRigidBody(groundAmmo);
+
+			AmmoDebugShapeCreator.createBox(null, width, height, depth, world);
 		}
 
 		return {

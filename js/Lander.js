@@ -4,14 +4,18 @@ define([
 'goo/entities/components/ScriptComponent',
 
 'js/Prop',
-'js/physics/PhysicalWorld'
+'js/physics/PhysicalWorld',
+
+'js/AmmoDebugShapeCreator'
 ],
 function (
 Vector3,
 TransformComponent,
 ScriptComponent,
 Prop,
-PhysicalWorld
+PhysicalWorld,
+
+AmmoDebugShapeCreator
 ) {
 
 	function Lander(entity) {
@@ -28,12 +32,16 @@ PhysicalWorld
 	};
 
 	Lander.prototype.buildRigidBody = function() {
-		var radius = 1.0;
+		var radius = 0.2;
 		var mass = 10;
 		var position = this.entity.transformComponent.transform.translation;
-		var rigidBody = PhysicalWorld.createAmmoJSSphere(radius, [position.x, position.y, position.z], mass);
+		//position = new Vector3(0,0,0);
+		var rigidBody = PhysicalWorld.createAmmoJSSphere(radius, position, mass);
 		PhysicalWorld.addRigidBody(rigidBody);
 		this.addScript(PhysicalWorld.createAmmoComponentScript(rigidBody));
+
+		AmmoDebugShapeCreator.createSphere(this.entity, radius);
+
 		return rigidBody;
 	};
 

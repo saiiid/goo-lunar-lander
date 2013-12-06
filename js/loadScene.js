@@ -50,6 +50,9 @@ require([
 ) {
 	'use strict';
 
+
+	var goo;
+
 	function init() {
 
 		// If you try to load a scene without a server, you're gonna have a bad time
@@ -84,7 +87,7 @@ require([
 			};
 
 			// Create typical Goo application
-			var goo = new GooRunner({
+			goo = new GooRunner({
 				antialias: true,
 				manuallyStartGameLoop: true
 			});
@@ -118,7 +121,7 @@ require([
 				buildPhysicsGround(groundEntities);
 
 				var lander = new Lander(landerEntity);
-				lander.translate(0, 1, 0);
+				lander.translate(0, 2, 0);
 				lander.initPhysics();
 
 				var props = [];
@@ -166,9 +169,10 @@ require([
 			var scale = transform.scale;
 			console.log("Ground transform: " + pos);
 			console.log("Ground scale: " + scale);
-			PhysicalWorld.addPhysicalWorldMesh(meshData, pos, scale);
+			// PhysicalWorld.addPhysicalWorldMesh(meshData, pos, scale);
 		}
-		PhysicalWorld.addStaticBox(new Vector3(0, 10, 0), 300);
+
+		PhysicalWorld.addStaticBox(new Vector3(0, 0, 0), 300, 1, 300, goo.world);
 	};
 
 	init();

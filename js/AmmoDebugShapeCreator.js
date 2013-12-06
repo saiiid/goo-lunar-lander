@@ -1,26 +1,45 @@
 define([
 	'goo/entities/EntityUtils',
-	'goo/shapes/ShapeCreator'
+	'goo/shapes/ShapeCreator',
+	'goo/renderer/shaders/ShaderLib',
+	'goo/renderer/Material'
 ],
 function (
 	EntityUtils,
-	ShapeCreator
+	ShapeCreator,
+	ShaderLib,
+	Material
 	)
 {
+	var defaultMaterial = Material.createMaterial(ShaderLib.simpleLit);
+	defaultMaterial.wireframe = true;
+	defaultMaterial.materialState.diffuse = [1.0, 0, 0, 1.0];
 
-	function AmmoDebugShapeCreator(goo) {
-		this.world = goo.world;
-		var mat = Material.createMaterial(ShaderLib.simpleLit);
-		mat.wireframe = true;
-		mat.materialState.diffuse = [1.0, 0, 0, 1];
-		this.defaultMaterial = mat;
+	function AmmoDebugShapeCreator() {
 	}
 
-	AmmoDebugShapeCreator.prototype.createSphere = function (radius, position) {
+	AmmoDebugShapeCreator._setChild = function(childEntity, parentEntity) {
+		parentEntity.transformComponent.attachChild(childEntity.transformComponent);
+	};
+
+	AmmoDebugShapeCreator.createSphere = function (parentEntity, radius) {
 		var zSamples = 16;
 		var radialSamples = 16;
-		var sphereShape = ShapeCreator.createSphere(zSamples, radialSamples, radius);
-		var entity = EntityUtils.createTypicalEntity(this.world, sphereShape, this.defaultMaterial);
+		var shape = ShapeCreator.createSphere(zSamples, radialSamples, radius);
+		var entity = EntityUtils.createTypicalEntity(parentEntity._world, shape, defaultMaterial);
+		this._setChild(entity, parentEntity);
+		entity.addToWorld();
+	};
+
+	AmmoDebugShapeCreator.createBox = function (parentEntity, width, height, depth, world, position) {
+		var shape = ShapeCreator.createBox(width, height, depth);
+		if (parentEntity == null) {
+			var entity = EntityUtils.createTypicalEntity(world, shape, defaultMaterial);
+		} else {
+			var entity = EntityUtils.createTypicalEntity(parentEntity._world, shape, defaultMaterial);
+			this._setChild(entity, parentEntity);
+		}
+		entity.addToWorld();
 	};
 
 	return AmmoDebugShapeCreator;

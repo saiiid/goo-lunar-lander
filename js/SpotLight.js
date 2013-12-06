@@ -33,7 +33,7 @@ PhysicalWorld
 		var radius = 1.0;
 		var mass = 10;
 		var position = this.entity.transformComponent.transform.translation;
-		var rigidBody = PhysicalWorld.createAmmoJSSphere(radius, [position.x, position.y, position.z], mass);
+		var rigidBody = PhysicalWorld.createAmmoJSSphere(radius, position, mass);
 		PhysicalWorld.addRigidBody(rigidBody);
 		this.addScript(PhysicalWorld.createAmmoComponentScript(rigidBody));
 		return rigidBody;
