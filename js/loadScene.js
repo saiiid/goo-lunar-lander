@@ -17,7 +17,9 @@ require([
 	'goo/entities/components/LightComponent',
 
 	'js/Lander',
-	'js/LanderKeyScript'
+	'js/LanderKeyScript',
+
+	'js/physics/PhysicalWorld'
 
 ], function (
 	GooRunner,
@@ -38,7 +40,9 @@ require([
 	LightComponent,
 
 	Lander,
-	LanderKeyScript
+	LanderKeyScript,
+
+	PhysicalWorld
 ) {
 	'use strict';
 
@@ -83,6 +87,8 @@ require([
 			var fsm = new FSMSystem(goo);
 			goo.world.setSystem(fsm);
 			goo.world.setSystem(new HowlerSystem());
+
+
 
 			// The loader takes care of loading the data
 			var loader = new DynamicLoader({
