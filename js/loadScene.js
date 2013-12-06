@@ -152,8 +152,8 @@ require([
 				props.push(new SpotLight(lightEntity1, goo));
 				props.push(new SpotLight(lightEntity2, goo));
 				for (var each in props) {
-					props[each].translate(0, 1, 0);
-					props[each].initPhysics();
+					//props[each].translate(0, 1, 0);
+					//props[each].initPhysics();
 				}
 
 				lander.addScript(new LanderKeyScript(lander, {
