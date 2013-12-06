@@ -61,15 +61,13 @@ AmmoDebugShapeCreator
 	};
 
 	Lander.prototype.buildRigidBody = function() {
-		var radius = 0.2;
+		var radius = 1;
 		var mass = 10;
 		var position = this.entity.transformComponent.transform.translation;
-		//position = new Vector3(0,0,0);
 		var rigidBody = PhysicalWorld.createAmmoJSSphere(radius, position, mass);
 		PhysicalWorld.addRigidBody(rigidBody);
 		this.addScript(PhysicalWorld.createAmmoComponentScript(rigidBody));
-
-		AmmoDebugShapeCreator.createSphere(this.entity, radius);
+		AmmoDebugShapeCreator.createSphere(this.entity, rigidBody, radius);
 
 		return rigidBody;
 	};

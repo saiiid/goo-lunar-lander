@@ -126,6 +126,7 @@ define([
 				var pquat = physTransform.getRotation();
 				quaternion.setd(pquat.x(), pquat.y(), pquat.z(), pquat.w());
 				transformComp.transform.rotation.copyQuaternion(quaternion);
+				transformComp.setUpdated();
 			};
 			return script
 		}

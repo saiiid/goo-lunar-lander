@@ -2,13 +2,15 @@ define([
 	'goo/entities/EntityUtils',
 	'goo/shapes/ShapeCreator',
 	'goo/renderer/shaders/ShaderLib',
-	'goo/renderer/Material'
+	'goo/renderer/Material',
+	'js/physics/PhysicalWorld'
 ],
 function (
 	EntityUtils,
 	ShapeCreator,
 	ShaderLib,
-	Material
+	Material,
+	PhysicalWorld
 	)
 {
 	var defaultMaterial = Material.createMaterial(ShaderLib.simpleLit);
@@ -22,12 +24,12 @@ function (
 		parentEntity.transformComponent.attachChild(childEntity.transformComponent);
 	};
 
-	AmmoDebugShapeCreator.createSphere = function (parentEntity, radius) {
+	AmmoDebugShapeCreator.createSphere = function (parentEntity, rigidBody, radius) {
 		var zSamples = 16;
 		var radialSamples = 16;
 		var shape = ShapeCreator.createSphere(zSamples, radialSamples, radius);
+		// var script = PhysicalWorld.createAmmoComponentScript(rigidBody);
 		var entity = EntityUtils.createTypicalEntity(parentEntity._world, shape, defaultMaterial);
-		this._setChild(entity, parentEntity);
 		entity.addToWorld();
 	};
 

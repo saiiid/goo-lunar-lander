@@ -142,9 +142,9 @@ require([
 				groundEntities.push(sandEntity);
 				buildPhysicsGround(groundEntities);
 
+				var lander = new Lander(landerEntity, thrusterEntitites, goo);
+				lander.translate(0, 15, 0);
 
-				var lander = new Lander(landerEntity, thrusterEntitites, thrusterLightEntities, goo);
-				lander.translate(0, 2, 0);
 				lander.initPhysics();
 
 				var props = [];
@@ -189,7 +189,7 @@ require([
 		var radius = 1.0;
 		var shape = ShapeCreator.createSphere(zSamples, radialSamples, radius);
 		var entity = EntityUtils.createTypicalEntity(goo.world, shape, defaultMaterial);
-		entity.transformComponent.setTranslation(new Vector3(0, 20, 0));
+		entity.transformComponent.setTranslation(new Vector3(0, 15, 0));
 		var rb = PhysicalWorld.createAmmoJSSphere(radius, entity.transformComponent.transform.translation, 10);
 		PhysicalWorld.addRigidBody(rb);
 		entity.setComponent(new ScriptComponent(PhysicalWorld.createAmmoComponentScript(rb)));
@@ -217,7 +217,7 @@ require([
 
 		createTestSphere();
 
-		PhysicalWorld.addStaticBox(new Vector3(0, 8, 0), 100, 5, 100, goo.world);
+		PhysicalWorld.addStaticBox(new Vector3(0, 6.5, 0), 100, 9, 100, goo.world);
 	};
 
 	init();
