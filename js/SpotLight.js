@@ -16,9 +16,9 @@ PhysicalWorld,
 AmmoDebugShapeCreator
 ) {
 
-	function SpotLight(entity) {
+	function SpotLight(entity, goo) {
 		console.log("Creating SpotLight");
-		Prop.call(this, entity);
+		Prop.call(this, entity, goo);
 		this.name = "SpotLight";
 		console.log(this.entity);
 

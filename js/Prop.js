@@ -13,9 +13,10 @@ ScriptComponent
 
 	"use strict";
 
-	function Prop(entity) {
+	function Prop(entity, goo) {
 		console.log("Creating Prop");
 		this.name = "Prop";
+		this.goo = goo;
 		this.entity = entity;
 		this.scriptComponent = new ScriptComponent();
 		this.entity.setComponent(this.scriptComponent);

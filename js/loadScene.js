@@ -115,19 +115,26 @@ require([
 				var lightEntity1 = loader.getCachedObjectForRef('ms_scene/entities/lights_mesh1_0.entity');
 				var lightEntity2 = loader.getCachedObjectForRef('ms_scene/entities/lights_mesh2_0.entity');
 
+				var thrusterEntitites = [];
+				thrusterEntitites.push(loader.getCachedObjectForRef('entities/Cylinder.entity'));
+				thrusterEntitites.push(loader.getCachedObjectForRef('entities/Cylinder_0.entity'));
+				thrusterEntitites.push(loader.getCachedObjectForRef('entities/Cylinder_1.entity'));
+				thrusterEntitites.push(loader.getCachedObjectForRef('entities/Cylinder_2.entity'));
+
 				var groundEntities = [];
 				var sandEntity = loader.getCachedObjectForRef('ms_scene/entities/sand_0.entity');
 				groundEntities.push(sandEntity);
 				buildPhysicsGround(groundEntities);
 
-				var lander = new Lander(landerEntity);
+
+				var lander = new Lander(landerEntity, thrusterEntitites, goo);
 				lander.translate(0, 2, 0);
 				lander.initPhysics();
 
 				var props = [];
-				props.push(new SpotLight(lightEntity0));
-				props.push(new SpotLight(lightEntity1));
-				props.push(new SpotLight(lightEntity2));
+				props.push(new SpotLight(lightEntity0, goo));
+				props.push(new SpotLight(lightEntity1, goo));
+				props.push(new SpotLight(lightEntity2, goo));
 				for (var each in props) {
 					props[each].translate(0, 1, 0);
 					props[each].initPhysics();

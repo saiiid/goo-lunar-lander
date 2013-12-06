@@ -1,8 +1,168 @@
 {
+    "entities/Cylinder.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": null,
+                "shape": "Cylinder",
+                "shapeOptions": {
+                    "radialSamples": 16
+                }
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "materials/Material_0.material"
+                ],
+                "receiveShadows": true
+            },
+            "transform": {
+                "parentRef": "ms_scene/entities/moonlander_mesh_0.entity",
+                "rotation": [
+                    90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    0.0439264141023159,
+                    0.0439264141023159,
+                    0.012028195895254612
+                ],
+                "translation": [
+                    0.0022164236288517714,
+                    0.0019218040397390723,
+                    0.43767082691192627
+                ]
+            }
+        },
+        "name": "Cylinder",
+        "ref": "entities/Cylinder.entity"
+    },
+    "entities/Cylinder_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": null,
+                "shape": "Cylinder",
+                "shapeOptions": {
+                    "radialSamples": 16
+                }
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "materials/Material_0.material"
+                ],
+                "receiveShadows": true
+            },
+            "transform": {
+                "parentRef": "ms_scene/entities/moonlander_mesh_0.entity",
+                "rotation": [
+                    90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    0.0439264141023159,
+                    0.0439264141023159,
+                    0.012028195895254612
+                ],
+                "translation": [
+                    -0.4322949945926666,
+                    0.0019218040397390723,
+                    4.940757207805291e-05
+                ]
+            }
+        },
+        "name": "Cylinder",
+        "ref": "entities/Cylinder_0.entity"
+    },
+    "entities/Cylinder_1.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": null,
+                "shape": "Cylinder",
+                "shapeOptions": {
+                    "radialSamples": 16
+                }
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "materials/Material_0.material"
+                ],
+                "receiveShadows": true
+            },
+            "transform": {
+                "parentRef": "ms_scene/entities/moonlander_mesh_0.entity",
+                "rotation": [
+                    90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    0.0439264141023159,
+                    0.0439264141023159,
+                    0.012028195895254612
+                ],
+                "translation": [
+                    0.0033526085317134857,
+                    0.0019218040397390723,
+                    -0.43805834650993347
+                ]
+            }
+        },
+        "name": "Cylinder",
+        "ref": "entities/Cylinder_1.entity"
+    },
+    "entities/Cylinder_2.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": null,
+                "shape": "Cylinder",
+                "shapeOptions": {
+                    "radialSamples": 16
+                }
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "materials/Material_0.material"
+                ],
+                "receiveShadows": true
+            },
+            "transform": {
+                "parentRef": "ms_scene/entities/moonlander_mesh_0.entity",
+                "rotation": [
+                    90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    0.0439264141023159,
+                    0.0439264141023159,
+                    0.012028195895254612
+                ],
+                "translation": [
+                    0.43994319438934326,
+                    0.0019218040397390723,
+                    0.0010139530058950186
+                ]
+            }
+        },
+        "name": "Cylinder",
+        "ref": "entities/Cylinder_2.entity"
+    },
     "entities/DefaultToolCamera.entity": {
         "components": {
             "camera": {
-                "aspect": 1.2407834101382489,
+                "aspect": 1.3054545454545454,
                 "far": 20000,
                 "fov": 45,
                 "near": 0.4
@@ -226,6 +386,90 @@
             }
         }
     },
+    "materials/Material_0.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "CustomBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "Blank",
+        "ref": "materials/Material_0.material",
+        "renderQueue": 2000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.1,
+                    0.1,
+                    0.1,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 63
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 0
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
     "ms_scene/entities/RootNode.entity": {
         "components": {
             "transform": {
@@ -270,7 +514,7 @@
                 "lightCookie": null,
                 "penumbra": 24,
                 "range": 50,
-                "shadowCaster": false,
+                "shadowCaster": true,
                 "shadowSettings": {
                     "darkness": 0,
                     "far": 50,
@@ -335,7 +579,7 @@
                 "lightCookie": null,
                 "penumbra": 17,
                 "range": 50,
-                "shadowCaster": false,
+                "shadowCaster": true,
                 "shadowSettings": {
                     "darkness": 0,
                     "far": 50,
@@ -400,7 +644,7 @@
                 "lightCookie": null,
                 "penumbra": 15,
                 "range": 50,
-                "shadowCaster": false,
+                "shadowCaster": true,
                 "shadowSettings": {
                     "darkness": 0,
                     "far": 50,
@@ -1081,9 +1325,9 @@
                     1.861907397580489
                 ],
                 "translation": [
-                    2.378572899518075,
-                    0.0566985144072481,
-                    -1.2210107788012694
+                    2.378573417663574,
+                    0.07939917594194412,
+                    -1.2210108041763306
                 ]
             }
         },
@@ -1351,7 +1595,7 @@
         },
         "name": "box_material",
         "ref": "ms_scene/materials/box_material.material",
-        "renderQueue": -1,
+        "renderQueue": 1000,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
             "DIFFUSE_MAP": {
@@ -2431,7 +2675,7 @@
         },
         "name": "sand_material",
         "ref": "ms_scene/materials/sand_material.material",
-        "renderQueue": -1,
+        "renderQueue": 1000,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
             "DIFFUSE_MAP": {
@@ -3894,7 +4138,10 @@
             "ms_scene/entities/SpotLight_0.entity",
             "ms_scene/entities/SpotLight_1.entity",
             "entities/Sphere_0.entity",
-            "entities/Sphere_1.entity"
+            "entities/Sphere_1.entity",
+            "entities/Cylinder_0.entity",
+            "entities/Cylinder_1.entity",
+            "entities/Cylinder_2.entity"
         ],
         "name": "ms_scene",
         "ref": "ms_scene/ms_scene.group"
@@ -4249,8 +4496,8 @@
         "options": {
             "brightness": 0,
             "contrast": 0,
-            "opacity": 31,
-            "size": 2
+            "opacity": 44,
+            "size": 3.4
         },
         "ref": "posteffects/Bloom.posteffect"
     },
@@ -4264,12 +4511,12 @@
         "ref": "posteffects/Contrast.posteffect"
     },
     "posteffects/Grain.posteffect": {
-        "enabled": false,
+        "enabled": true,
         "name": "Grain",
         "options": {
-            "nIntensity": 50,
-            "sCount": 1024,
-            "sIntensity": 50
+            "nIntensity": 7,
+            "sCount": 1471,
+            "sIntensity": 26
         },
         "ref": "posteffects/Grain.posteffect"
     },
@@ -4291,11 +4538,11 @@
         "ref": "posteffects/Sepia.posteffect"
     },
     "posteffects/Vignette.posteffect": {
-        "enabled": false,
+        "enabled": true,
         "name": "Vignette",
         "options": {
             "darkness": 1.5,
-            "offset": 1
+            "offset": 0.8
         },
         "ref": "posteffects/Vignette.posteffect"
     },
@@ -4338,7 +4585,11 @@
             "ms_scene/entities/SpotLight_1.entity",
             "entities/Sphere.entity",
             "entities/Sphere_0.entity",
-            "entities/Sphere_1.entity"
+            "entities/Sphere_1.entity",
+            "entities/Cylinder.entity",
+            "entities/Cylinder_0.entity",
+            "entities/Cylinder_1.entity",
+            "entities/Cylinder_2.entity"
         ],
         "fogColor": [
             1,
@@ -4375,12 +4626,12 @@
             "posteffects/Bleach.posteffect"
         ],
         "public": true,
-        "publishedTime": "2013-12-06T11:51:06.023688",
+        "publishedTime": "2013-12-06T12:59:01.717995",
         "publishedURL": "http://goote.ch/CpruIsc6TBKZ1smDHZF8GQ",
         "ref": "project.project",
         "screenshot": "images/screenshot.png",
         "shareButtons": false,
-        "shareURL": "http://goote.ch/CpruIsc6TBKZ1smDHZF8GQ?v=2013-12-06T11:51:06.023710",
+        "shareURL": "http://goote.ch/CpruIsc6TBKZ1smDHZF8GQ?v=2013-12-06T12:59:01.718017",
         "skybox": {
             "environmentType": 1,
             "imageUrls": [
@@ -4421,7 +4672,9 @@
             "posteffects/Bleach.posteffect",
             "entities/Sphere.entity",
             "materials/Material.material",
-            "images/screenshot.png"
+            "images/screenshot.png",
+            "entities/Cylinder.entity",
+            "materials/Material_0.material"
         ],
         "name": "root",
         "ref": "root.group"
@@ -4438,7 +4691,7 @@
             "invertedY": false,
             "lookAtPoint": [
                 0,
-                18.54727554321289,
+                18.547273635864258,
                 0
             ],
             "maxAscent": 1.5699236621688994,
@@ -4448,9 +4701,9 @@
             "minAzimuth": 1.5707963267948966,
             "minZoomDistance": 0.1,
             "spherical": [
-                65.23760223388672,
-                2.7857937812805176,
-                0.29000020027160645
+                36.44719696044922,
+                2.550795316696167,
+                0.3499999940395355
             ],
             "turnSpeedHorizontal": 0.005,
             "turnSpeedVertical": 0.005,
