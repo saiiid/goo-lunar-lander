@@ -114,11 +114,14 @@ require([
 
 			loader.loadFromBundle('project.project', 'root.bundle', {recursive: false, preloadBinaries: true}).then(function(configs) {
 
+				console.log(configs);
 				// Set up the canvas and renderer
 				goo.renderer.domElement.id = 'goo';
 				document.body.appendChild(goo.renderer.domElement);
 
 				var landerEntity = loader.getCachedObjectForRef('ms_scene/entities/moonlander_mesh_0.entity');
+				landerEntity.transformComponent.setScale(new Vector3(7, 7, 7));
+				// landerEntity.transformComponent.setUpdated();
 				var lightEntity0 = loader.getCachedObjectForRef('ms_scene/entities/lights_mesh_0.entity');
 				var lightEntity1 = loader.getCachedObjectForRef('ms_scene/entities/lights_mesh1_0.entity');
 				var lightEntity2 = loader.getCachedObjectForRef('ms_scene/entities/lights_mesh2_0.entity');
@@ -143,7 +146,9 @@ require([
 				buildPhysicsGround(groundEntities);
 
 				var lander = new Lander(landerEntity, thrusterEntitites, thrusterLightEntities, goo);
-				lander.translate(0, 15, 0);
+				lander.translate(0, 10, 0);
+				landerEntity.addToWorld();
+
 
 				lander.initPhysics();
 

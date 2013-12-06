@@ -1668,7 +1668,6 @@
                 "reflectable": false
             },
             "transform": {
-                "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
                     180,
                     34.21429233775528,

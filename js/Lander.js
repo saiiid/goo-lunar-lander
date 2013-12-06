@@ -51,6 +51,8 @@ AmmoDebugShapeCreator
 		this.thrusterParticleMaterial.cullState.enabled = false;
 		this.thrusterParticleMaterial.depthState.write = false;
 		this.thrusterParticleMaterial.renderQueue = 2001;
+
+		this.mainForce = new Ammo.btVector3(0, 5, 0);
 	};
 
 	Lander.prototype = Object.create(Prop.prototype);
@@ -61,14 +63,15 @@ AmmoDebugShapeCreator
 	};
 
 	Lander.prototype.buildRigidBody = function() {
-		var radius = 1;
+		var radius = 3;
 		var mass = 10;
-		var position = this.entity.transformComponent.transform.translation;
+		// var position = this.entity.transformComponent.worldTransform.translation;
+		var position = new Vector3(15, 40, -10);
 		var rigidBody = PhysicalWorld.createAmmoJSSphere(radius, position, mass);
 		PhysicalWorld.addRigidBody(rigidBody);
 		this.addScript(PhysicalWorld.createAmmoComponentScript(rigidBody));
-		AmmoDebugShapeCreator.createSphere(this.entity, rigidBody, radius);
-
+		var debugEntity = AmmoDebugShapeCreator.createSphere(this.entity, rigidBody, radius);
+		debugEntity.setComponent(PhysicalWorld.createAmmoComponentScript(rigidBody));
 		return rigidBody;
 	};
 
@@ -136,6 +139,8 @@ AmmoDebugShapeCreator
 		console.log('Firing thruster ' + thruster);
 		this.addParticles(thruster);
 		this.thrusterLightEntities[thruster].lightComponent.light.intensity = Math.random()*0.5 + 2;
+
+		this.rigidBody.applyCentralImpulse(this.mainForce);
 	};
 
 	Lander.prototype.turnOffThruster = function(thruster) {
