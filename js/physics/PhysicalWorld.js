@@ -196,7 +196,7 @@ define([
 
 			console.log("world ");
 			console.log(world);
-
+			// Bullet (ammo) uses half extents
 			var groundShape = new Ammo.btBoxShape(new Ammo.btVector3(width / 2, height / 2 , depth / 2));
 			var groundTransform = new Ammo.btTransform();
 			groundTransform.setIdentity();

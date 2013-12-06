@@ -21,7 +21,11 @@ require([
 	'js/LanderKeyScript',
 	'js/SpotLight',
 
-	'js/physics/PhysicalWorld'
+	'js/physics/PhysicalWorld',
+
+	'goo/shapes/ShapeCreator',
+	'goo/renderer/shaders/ShaderLib',
+	'goo/renderer/Material'
 
 ], function (
 	GooRunner,
@@ -46,7 +50,11 @@ require([
 	LanderKeyScript,
 	SpotLight,
 
-	PhysicalWorld
+	PhysicalWorld,
+
+	ShapeCreator,
+	ShaderLib,
+	Material
 ) {
 	'use strict';
 
@@ -171,6 +179,25 @@ require([
 		}
 	}
 
+	function createTestSphere(){
+		var defaultMaterial = Material.createMaterial(ShaderLib.simpleLit);
+		defaultMaterial.materialState.diffuse = [0, 1, 0, 1.0];
+		defaultMaterial.materialState.ambient = [0, 0.5, 0, 1.0];
+		defaultMaterial.wireframe = true;
+		var zSamples = 24;
+		var radialSamples = 24;
+		var radius = 1.0;
+		var shape = ShapeCreator.createSphere(zSamples, radialSamples, radius);
+		var entity = EntityUtils.createTypicalEntity(goo.world, shape, defaultMaterial);
+		entity.transformComponent.setTranslation(new Vector3(0, 20, 0));
+		var rb = PhysicalWorld.createAmmoJSSphere(radius, entity.transformComponent.transform.translation, 10);
+		PhysicalWorld.addRigidBody(rb);
+		entity.setComponent(new ScriptComponent(PhysicalWorld.createAmmoComponentScript(rb)));
+		entity.addToWorld();
+		console.log("testsphere");
+		console.log(entity);
+	}
+
 
 	function buildPhysicsGround(groundEntities) {
 		for (var i = 0; i < groundEntities.length; i++) {
@@ -188,7 +215,9 @@ require([
 			// PhysicalWorld.addPhysicalWorldMesh(meshData, pos, scale);
 		}
 
-		PhysicalWorld.addStaticBox(new Vector3(0, 0, 0), 300, 1, 300, goo.world);
+		createTestSphere();
+
+		PhysicalWorld.addStaticBox(new Vector3(0, 8, 0), 100, 5, 100, goo.world);
 	};
 
 	init();

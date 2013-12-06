@@ -44,7 +44,7 @@ AmmoDebugShapeCreator
 		console.log(this.thrusterLightEntities);
 		// For thruster particles
 		this.thrusterParticleMaterial = Material.createMaterial(ShaderLib.particles);
-		this.thrusterParticleTexture = new TextureCreator().loadTexture2D('res\\flare.png'); 
+		this.thrusterParticleTexture = new TextureCreator().loadTexture2D('res\\flare.png');
 		this.thrusterParticleTexture.generateMipmaps = true;
 		this.thrusterParticleMaterial.setTexture('DIFFUSE_MAP', this.thrusterParticleTexture);
 		this.thrusterParticleMaterial.blendState.blending = 'AdditiveBlending';
@@ -127,7 +127,7 @@ AmmoDebugShapeCreator
 					size : 3.0,
 					color : [0, 0, 0, 0]
 				}]
-			} 
+			}
 		,this.thrusterParticleMaterial);
 
 		this.thrusterEntities[thruster].transformComponent.attachChild(particleSystemEntity.transformComponent);
