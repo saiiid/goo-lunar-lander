@@ -2,7 +2,7 @@
     "entities/DefaultToolCamera.entity": {
         "components": {
             "camera": {
-                "aspect": 1.5172811059907834,
+                "aspect": 1.2407834101382489,
                 "far": 20000,
                 "fov": 45,
                 "near": 0.4
@@ -4306,7 +4306,7 @@
             0.78,
             1
         ],
-        "created": "2013-12-06T09:31:39.726519",
+        "created": "2013-12-06T09:54:05.254899",
         "deleted": false,
         "edit": [],
         "entityRefs": [
@@ -4356,10 +4356,10 @@
             "ms_scene/ms_scene.group",
             "root.group"
         ],
-        "id": "ATWyvqrxSo6xlxQbncOArw",
+        "id": "b4_KpQtsRWCqwpUs6sOggA",
         "licenseType": "CC0",
         "modified": "2013-12-05T13:58:05.393557",
-        "name": "Amazing lunar lander",
+        "name": "Default Goo Project",
         "originalLicenseType": null,
         "own": [
             "Y70O6QqySi2VpuQlm9gmzQ"
@@ -4375,22 +4375,23 @@
             "posteffects/Bleach.posteffect"
         ],
         "public": true,
-        "publishedTime": "2013-12-06T09:47:23.858034",
-        "publishedURL": "http://goote.ch/ATWyvqrxSo6xlxQbncOArw",
+        "publishedTime": "2013-12-06T09:56:33.319482",
+        "publishedURL": "http://goote.ch/b4_KpQtsRWCqwpUs6sOggA",
         "ref": "project.project",
         "screenshot": "images/screenshot.png",
         "shareButtons": false,
-        "shareURL": "http://goote.ch/ATWyvqrxSo6xlxQbncOArw?v=2013-12-06T09:47:23.858054",
+        "shareURL": "http://goote.ch/b4_KpQtsRWCqwpUs6sOggA?v=2013-12-06T09:56:33.319504",
         "skybox": {
             "environmentType": 1,
             "imageUrls": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "GOO_ASSET_LIBRARY/images/goo/goo_lab/lab_cm_right.jpg",
+                "GOO_ASSET_LIBRARY/images/goo/goo_lab/lab_cm_left.jpg",
+                "GOO_ASSET_LIBRARY/images/goo/goo_lab/lab_cm_top.jpg",
+                "GOO_ASSET_LIBRARY/images/goo/goo_lab/lab_cm_bottom.jpg",
+                "GOO_ASSET_LIBRARY/images/goo/goo_lab/lab_cm_front.jpg",
+                "GOO_ASSET_LIBRARY/images/goo/goo_lab/lab_cm_back.jpg"
             ],
+            "ref": "environment/goo_lab.skybox",
             "rotation": 0,
             "shape": "Box"
         },
@@ -4407,6 +4408,8 @@
     },
     "root.group": {
         "libraryRefs": [
+            "scripts/DefaultToolCameraScript.script",
+            "entities/DefaultToolCamera.entity",
             "scripts/DefaultToolCameraScript.script",
             "entities/DefaultToolCamera.entity",
             "posteffects/Sepia.posteffect",
@@ -4434,9 +4437,9 @@
             "invertedX": false,
             "invertedY": false,
             "lookAtPoint": [
-                -46.70000457763672,
-                32.2481803894043,
-                11.8361234664917
+                0.36237916350364685,
+                21.26041030883789,
+                -1.849816918373108
             ],
             "maxAscent": 1.5699236621688994,
             "maxAzimuth": 4.71238898038469,
@@ -4445,9 +4448,9 @@
             "minAzimuth": 1.5707963267948966,
             "minZoomDistance": 0.1,
             "spherical": [
-                6.743632793426514,
-                2.8708009719848633,
-                0.2600005269050598
+                53.61653137207031,
+                2.815790891647339,
+                0.22000014781951904
             ],
             "turnSpeedHorizontal": 0.005,
             "turnSpeedVertical": 0.005,
