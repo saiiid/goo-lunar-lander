@@ -142,7 +142,7 @@ require([
 				groundEntities.push(sandEntity);
 				buildPhysicsGround(groundEntities);
 
-				var lander = new Lander(landerEntity, thrusterEntitites, goo);
+				var lander = new Lander(landerEntity, thrusterEntitites, thrusterLightEntities, goo);
 				lander.translate(0, 15, 0);
 
 				lander.initPhysics();
