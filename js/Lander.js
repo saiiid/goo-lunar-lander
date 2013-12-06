@@ -15,9 +15,9 @@ PhysicalWorld
 ) {
 
 
-	function Lander(entity, properties, goo) {
+	function Lander(entity) {
 		console.log("Creating Lander");
-		Prop.call(this, entity, properties, goo);
+		Prop.call(this, entity);
 		this.name = "Lander";
 	};
 

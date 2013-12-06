@@ -19,6 +19,7 @@ require([
 	'js/Prop',
 	'js/Lander',
 	'js/LanderKeyScript',
+	'js/SpotLight',
 
 	'js/physics/PhysicalWorld'
 
@@ -43,6 +44,7 @@ require([
 	Prop,
 	Lander,
 	LanderKeyScript,
+	SpotLight,
 
 	PhysicalWorld
 ) {
@@ -104,34 +106,36 @@ require([
 				// Set up the canvas and renderer
 				goo.renderer.domElement.id = 'goo';
 				document.body.appendChild(goo.renderer.domElement);
-
-				// Load entities using a cache in case we want to clone them
-				var entityCache = [];
-				entityCache['lander'] = loader.getCachedObjectForRef('ms_scene/entities/moonlander_mesh_0.entity');
-				for (var each in entityCache) {
-					entityCache[each].removeFromWorld();
-				}
+			
+				var landerEntity = loader.getCachedObjectForRef('ms_scene/entities/moonlander_mesh_0.entity');
+				var lightEntity0 = loader.getCachedObjectForRef('ms_scene/entities/lights_mesh_0.entity');
+				var lightEntity1 = loader.getCachedObjectForRef('ms_scene/entities/lights_mesh1_0.entity');
+				var lightEntity2 = loader.getCachedObjectForRef('ms_scene/entities/lights_mesh2_0.entity');
 
 				var groundEntities = [];
-				var sand = loader.getCachedObjectForRef('ms_scene/entities/sand_0.entity');
-				groundEntities.push(sand);
+				var sandEntity = loader.getCachedObjectForRef('ms_scene/entities/sand_0.entity');
+				groundEntities.push(sandEntity);
 				buildPhysicsGround(groundEntities);
 
-				// Load the entities from the cache
-				var landerEntity = EntityUtils.clone(goo.world, entityCache['lander']);
-				console.log(landerEntity);
-
-				// Use the entity to create a Lander object
 				var lander = new Lander(landerEntity);
-				// Init lander with position and scale
-				lander.initPosition(new Vector3(15, 20, -15), 15.0);
+				lander.translate(0, 1, 0);
 				lander.initPhysics();
+
+				var props = [];
+				props.push(new SpotLight(lightEntity0));
+				props.push(new SpotLight(lightEntity1));
+				props.push(new SpotLight(lightEntity2));
+				for (var each in props) {
+					props[each].translate(0, 1, 0);
+					props[each].initPhysics();
+				}
 
 				lander.addScript(new LanderKeyScript(lander, {
 					nearLeftKey: 65, 	// A
 					farLeftKey: 81,  	// Q
 					nearRightKey: 68,	// D
-					farRightKey: 69 	// E
+					farRightKey: 69, 	// E
+					fireRate: 10
 				}));
 
 
@@ -156,11 +160,11 @@ require([
 			var meshData = entity.getComponent("meshDataComponent").meshData;
 			var pos = entity.transformComponent.transform.translation;
 			console.log("Ground transform: " + pos);
-			PhysicalWorld.addPhysicalWorldMesh(meshData, pos);
+			//PhysicalWorld.addPhysicalWorldMesh(meshData, pos);
 		}
 
 		
-		PhysicalWorld.addStaticBox(new Vector3(0, 10, 0), 300);
+		PhysicalWorld.addStaticBox(new Vector3(0, -1.9, 0), 300);
 	};
 
 	init();

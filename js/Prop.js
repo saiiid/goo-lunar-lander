@@ -11,28 +11,19 @@ TransformComponent,
 ScriptComponent
 ) {
 
-	function Prop(entity, properties, goo) {
+	"use strict";
+
+	function Prop(entity) {
 		console.log("Creating Prop");
 		this.name = "Prop";
-		this.goo = goo;
 		this.entity = entity;
-	};
-
-	Prop.prototype.initPosition = function(position, scale, roll, pitch, yaw) {
-
-		console.log('Initializing ' + this.name + ' position');
-
 		this.scriptComponent = new ScriptComponent();
 		this.entity.setComponent(this.scriptComponent);
-		this.entity.transformComponent.setScale(scale, scale, scale);
-		this.entity.transformComponent.addTranslation(position.x, position.y, position.z);
-		this.entity.transformComponent.setRotation(roll, pitch, yaw);
-		this.entity.transformComponent.setUpdated();
-		this.roll = roll;
-		this.pitch = pitch;
-		this.yaw = yaw;
-		this.entity.addToWorld();
+	};
 
+	Prop.prototype.translate = function(x, y, z) {
+		this.entity.transformComponent.addTranslation(x, y, z);
+		this.entity.transformComponent.setUpdated();
 	};
 
 	Prop.prototype.addScript = function(script) {

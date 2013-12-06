@@ -920,7 +920,7 @@
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
                     0,
-                    0,
+                    63.61522816206506,
                     0
                 ],
                 "scale": [
@@ -929,9 +929,9 @@
                     1
                 ],
                 "translation": [
-                    -1.5832030773162842,
-                    5.477500053530093e-08,
-                    0.12822280824184418
+                    0,
+                    0,
+                    3.80728616053101
                 ]
             }
         },
@@ -4306,7 +4306,7 @@
             0.78,
             1
         ],
-        "created": "2013-12-06T09:54:05.254899",
+        "created": "2013-12-06T11:49:15.076359",
         "deleted": false,
         "edit": [],
         "entityRefs": [
@@ -4314,7 +4314,9 @@
             "ms_scene/entities/lights_mesh_0.entity",
             "ms_scene/entities/flag_mesh_0.entity",
             "ms_scene/entities/trigger_mesh_0.entity",
+            "ms_scene/entities/lights_mesh2_0.entity",
             "ms_scene/entities/backdrop_mesh_0.entity",
+            "ms_scene/entities/lights_mesh1_0.entity",
             "ms_scene/entities/monitor_mesh1_0.entity",
             "ms_scene/entities/platform_mesh_0.entity",
             "ms_scene/entities/box_mesh_0.entity",
@@ -4332,7 +4334,11 @@
             "ms_scene/entities/chair_mesh_0.entity",
             "ms_scene/entities/cone_mesh_0.entity",
             "ms_scene/entities/SpotLight.entity",
-            "entities/Sphere.entity"
+            "ms_scene/entities/SpotLight_0.entity",
+            "ms_scene/entities/SpotLight_1.entity",
+            "entities/Sphere.entity",
+            "entities/Sphere_0.entity",
+            "entities/Sphere_1.entity"
         ],
         "fogColor": [
             1,
@@ -4350,7 +4356,7 @@
             "ms_scene/ms_scene.group",
             "root.group"
         ],
-        "id": "b4_KpQtsRWCqwpUs6sOggA",
+        "id": "CpruIsc6TBKZ1smDHZF8GQ",
         "licenseType": "CC0",
         "modified": "2013-12-05T13:58:05.393557",
         "name": "Default Goo Project",
@@ -4369,12 +4375,12 @@
             "posteffects/Bleach.posteffect"
         ],
         "public": true,
-        "publishedTime": "2013-12-06T10:05:59.872426",
-        "publishedURL": "http://goote.ch/b4_KpQtsRWCqwpUs6sOggA",
+        "publishedTime": "2013-12-06T11:51:06.023688",
+        "publishedURL": "http://goote.ch/CpruIsc6TBKZ1smDHZF8GQ",
         "ref": "project.project",
         "screenshot": "images/screenshot.png",
         "shareButtons": false,
-        "shareURL": "http://goote.ch/b4_KpQtsRWCqwpUs6sOggA?v=2013-12-06T10:05:59.872448",
+        "shareURL": "http://goote.ch/CpruIsc6TBKZ1smDHZF8GQ?v=2013-12-06T11:51:06.023710",
         "skybox": {
             "environmentType": 1,
             "imageUrls": [
@@ -4431,9 +4437,9 @@
             "invertedX": false,
             "invertedY": false,
             "lookAtPoint": [
-                -1.726966142654419,
-                13.654972076416016,
-                0.985072672367096
+                0,
+                18.54727554321289,
+                0
             ],
             "maxAscent": 1.5699236621688994,
             "maxAzimuth": 4.71238898038469,
@@ -4442,9 +4448,9 @@
             "minAzimuth": 1.5707963267948966,
             "minZoomDistance": 0.1,
             "spherical": [
-                79.61392211914062,
-                2.9257967472076416,
-                0.36999988555908203
+                65.23760223388672,
+                2.7857937812805176,
+                0.29000020027160645
             ],
             "turnSpeedHorizontal": 0.005,
             "turnSpeedVertical": 0.005,
