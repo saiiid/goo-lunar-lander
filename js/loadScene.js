@@ -116,7 +116,8 @@ require([
 					nearLeftKey: 65, 	// A
 					farLeftKey: 81,  	// Q
 					nearRightKey: 68,	// D
-					farRightKey: 69 	// E
+					farRightKey: 69, 	// E
+					firingRate: 10  	// Maximum events per second
 				}));
 
 

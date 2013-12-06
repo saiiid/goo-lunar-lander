@@ -55,6 +55,11 @@ ScriptComponent
 		this.entity.transformComponent.setUpdated();	
 	};
 
+	// Fire numbered thruster
+	Lander.prototype.fireThruster = function(thruster) {
+		console.log('Firing thruster ' + thruster);
+	}
+
 	return Lander;
 
 });
