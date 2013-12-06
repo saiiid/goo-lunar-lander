@@ -16,197 +16,215 @@
         "name": "DefaultToolCamera.entity",
         "ref": "entities/DefaultToolCamera.entity"
     },
-    "entities/SpotLight.entity": {
+    "entities/Sphere.entity": {
         "components": {
-            "light": {
-                "angle": 103,
-                "attenuate": true,
-                "color": [
-                    1,
-                    1,
-                    1,
-                    1
+            "meshData": {
+                "meshRef": null,
+                "shape": "Sphere",
+                "shapeOptions": {
+                    "radialSamples": 7,
+                    "textureMode": "Projected",
+                    "zSamples": 7
+                }
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "materials/Material.material"
                 ],
-                "direction": [
-                    0,
-                    0,
-                    0
-                ],
-                "intensity": 3.24,
-                "lightCookie": null,
-                "penumbra": 129,
-                "range": 50,
-                "shadowCaster": true,
-                "shadowSettings": {
-                    "darkness": 0,
-                    "far": 50,
-                    "fov": 103,
-                    "near": 1,
-                    "projection": "Perspective",
-                    "resolution": [
-                        256,
-                        256
-                    ],
-                    "shadowType": "VSM",
-                    "size": 400,
-                    "type": "Blur",
-                    "upVector": [
-                        0,
-                        1,
-                        0
-                    ]
-                },
-                "specularIntensity": 1,
-                "type": "SpotLight"
+                "receiveShadows": true
             },
             "transform": {
+                "parentRef": "ms_scene/entities/lights_mesh_0.entity",
                 "rotation": [
-                    -176.12611295702186,
+                    0,
                     0,
                     0
                 ],
                 "scale": [
-                    1,
-                    1,
-                    1
+                    0.04328280687332153,
+                    0.06462906301021576,
+                    0.06497950106859207
                 ],
                 "translation": [
-                    8.712130546569824,
-                    16.11030387878418,
-                    -29.01659393310547
+                    0.08843295276165009,
+                    0.8040564656257629,
+                    0.0006609160336665809
                 ]
             }
         },
-        "name": "SpotLight",
-        "ref": "entities/SpotLight.entity"
+        "name": "Sphere",
+        "ref": "entities/Sphere.entity"
     },
-    "entities/SpotLight_0.entity": {
+    "entities/Sphere_0.entity": {
         "components": {
-            "light": {
-                "angle": 122,
-                "attenuate": true,
-                "color": [
-                    1,
-                    1,
-                    1,
-                    1
+            "meshData": {
+                "meshRef": null,
+                "shape": "Sphere",
+                "shapeOptions": {
+                    "radialSamples": 7,
+                    "textureMode": "Projected",
+                    "zSamples": 7
+                }
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "materials/Material.material"
                 ],
-                "direction": [
+                "receiveShadows": true
+            },
+            "transform": {
+                "parentRef": "ms_scene/entities/lights_mesh1_0.entity",
+                "rotation": [
                     0,
                     0,
                     0
                 ],
-                "intensity": 1.91,
-                "lightCookie": null,
-                "penumbra": 73,
-                "range": 50,
-                "shadowCaster": true,
-                "shadowSettings": {
-                    "darkness": 0,
-                    "far": 50,
-                    "fov": 122,
-                    "near": 1,
-                    "projection": "Perspective",
-                    "resolution": [
-                        256,
-                        256
-                    ],
-                    "shadowType": "VSM",
-                    "size": 400,
-                    "type": "Blur",
-                    "upVector": [
-                        0,
-                        1,
-                        0
-                    ]
-                },
-                "specularIntensity": 1,
-                "type": "SpotLight"
-            },
-            "transform": {
-                "rotation": [
-                    0,
-                    -134.67924099782053,
-                    -3.7012103555645632
-                ],
                 "scale": [
-                    1,
-                    1,
-                    3.92
+                    0.0004783080657944083,
+                    0.06462906301021576,
+                    0.06497950106859207
                 ],
                 "translation": [
-                    -8.659502029418945,
-                    16.569236755371094,
-                    -28.894269943237305
+                    0.12485549598932266,
+                    0.8040564656257629,
+                    -0.006437300238758326
                 ]
             }
         },
-        "name": "SpotLight_0",
-        "ref": "entities/SpotLight_0.entity"
+        "name": "Sphere",
+        "ref": "entities/Sphere_0.entity"
     },
-    "entities/SpotLight_1.entity": {
+    "entities/Sphere_1.entity": {
         "components": {
-            "light": {
-                "angle": 84,
-                "attenuate": true,
-                "color": [
-                    1,
-                    1,
-                    1,
-                    1
+            "meshData": {
+                "meshRef": null,
+                "shape": "Sphere",
+                "shapeOptions": {
+                    "radialSamples": 7,
+                    "textureMode": "Projected",
+                    "zSamples": 7
+                }
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "materials/Material.material"
                 ],
-                "direction": [
-                    0,
-                    0,
-                    0
-                ],
-                "intensity": 2.94,
-                "lightCookie": null,
-                "penumbra": 51,
-                "range": 50,
-                "shadowCaster": true,
-                "shadowSettings": {
-                    "darkness": 0,
-                    "far": 50,
-                    "fov": 84,
-                    "near": 1,
-                    "projection": "Perspective",
-                    "resolution": [
-                        256,
-                        256
-                    ],
-                    "shadowType": "VSM",
-                    "size": 400,
-                    "type": "Blur",
-                    "upVector": [
-                        0,
-                        1,
-                        0
-                    ]
-                },
-                "specularIntensity": 1,
-                "type": "SpotLight"
+                "receiveShadows": true
             },
             "transform": {
+                "parentRef": "ms_scene/entities/lights_mesh2_0.entity",
                 "rotation": [
                     0,
-                    -28.56912059993799,
+                    0,
                     0
                 ],
                 "scale": [
-                    1,
-                    1,
-                    1
+                    0.02214936725795269,
+                    0.06462906301021576,
+                    0.06497950106859207
                 ],
                 "translation": [
-                    0.3528480529785156,
-                    15.454879760742188,
-                    25.941781997680664
+                    0.1016550064086914,
+                    0.7972551584243774,
+                    -0.0012316241627559066
                 ]
             }
         },
-        "name": "SpotLight_1",
-        "ref": "entities/SpotLight_1.entity"
+        "name": "Sphere",
+        "ref": "entities/Sphere_1.entity"
+    },
+    "materials/Material.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "Blank",
+        "ref": "materials/Material.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.1,
+                    0.1,
+                    0.1,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    1,
+                    0.9636363636363636,
+                    0.9636363636363636,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.6,
+                    0.6,
+                    0.6,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 64
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
     },
     "ms_scene/entities/RootNode.entity": {
         "components": {
@@ -231,6 +249,201 @@
         "name": "ms_scene",
         "nodeType": "Null",
         "ref": "ms_scene/entities/RootNode.entity"
+    },
+    "ms_scene/entities/SpotLight.entity": {
+        "components": {
+            "light": {
+                "angle": 67,
+                "attenuate": true,
+                "color": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "direction": [
+                    0,
+                    0,
+                    0
+                ],
+                "intensity": 6.09,
+                "lightCookie": null,
+                "penumbra": 24,
+                "range": 50,
+                "shadowCaster": false,
+                "shadowSettings": {
+                    "darkness": 0,
+                    "far": 50,
+                    "fov": 67,
+                    "near": 1,
+                    "projection": "Perspective",
+                    "resolution": [
+                        256,
+                        256
+                    ],
+                    "shadowType": "VSM",
+                    "size": 400,
+                    "type": "Blur",
+                    "upVector": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "specularIntensity": 1.61,
+                "type": "SpotLight"
+            },
+            "transform": {
+                "parentRef": "ms_scene/entities/lights_mesh_0.entity",
+                "rotation": [
+                    0,
+                    -82.00981498696547,
+                    0
+                ],
+                "scale": [
+                    0.8957445621490479,
+                    0.8957445621490479,
+                    0.8957445621490479
+                ],
+                "translation": [
+                    0.10909124463796616,
+                    0.779053270816803,
+                    -0.015312286093831062
+                ]
+            }
+        },
+        "name": "SpotLight",
+        "ref": "ms_scene/entities/SpotLight.entity"
+    },
+    "ms_scene/entities/SpotLight_0.entity": {
+        "components": {
+            "light": {
+                "angle": 68,
+                "attenuate": true,
+                "color": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "direction": [
+                    0,
+                    0,
+                    0
+                ],
+                "intensity": 2.7,
+                "lightCookie": null,
+                "penumbra": 17,
+                "range": 50,
+                "shadowCaster": false,
+                "shadowSettings": {
+                    "darkness": 0,
+                    "far": 50,
+                    "fov": 68,
+                    "near": 1,
+                    "projection": "Perspective",
+                    "resolution": [
+                        256,
+                        256
+                    ],
+                    "shadowType": "VSM",
+                    "size": 400,
+                    "type": "Blur",
+                    "upVector": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "specularIntensity": 1,
+                "type": "SpotLight"
+            },
+            "transform": {
+                "parentRef": "ms_scene/entities/lights_mesh1_0.entity",
+                "rotation": [
+                    -1.1441552968332778,
+                    -97.15957071702562,
+                    -3.5442792888641157
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0.22022196650505066,
+                    0.8087214231491089,
+                    1.5700286439823685e-06
+                ]
+            }
+        },
+        "name": "SpotLight_0",
+        "ref": "ms_scene/entities/SpotLight_0.entity"
+    },
+    "ms_scene/entities/SpotLight_1.entity": {
+        "components": {
+            "light": {
+                "angle": 69,
+                "attenuate": true,
+                "color": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "direction": [
+                    0,
+                    0,
+                    0
+                ],
+                "intensity": 1.85,
+                "lightCookie": null,
+                "penumbra": 15,
+                "range": 50,
+                "shadowCaster": false,
+                "shadowSettings": {
+                    "darkness": 0,
+                    "far": 50,
+                    "fov": 69,
+                    "near": 1,
+                    "projection": "Perspective",
+                    "resolution": [
+                        256,
+                        256
+                    ],
+                    "shadowType": "VSM",
+                    "size": 400,
+                    "type": "Blur",
+                    "upVector": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "specularIntensity": 1,
+                "type": "SpotLight"
+            },
+            "transform": {
+                "parentRef": "ms_scene/entities/lights_mesh2_0.entity",
+                "rotation": [
+                    0,
+                    -81.41866894449004,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    1.9372239421500126e-06,
+                    0.7862760424613953,
+                    -4.7463706209782686e-07
+                ]
+            }
+        },
+        "name": "SpotLight_1",
+        "ref": "ms_scene/entities/SpotLight_1.entity"
     },
     "ms_scene/entities/backdrop_mesh_0.entity": {
         "components": {
@@ -278,6 +491,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/box_material.material"
                 ],
@@ -287,9 +501,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    180.0,
+                    180,
                     -58.08033280213751,
-                    180.0
+                    180
                 ],
                 "scale": [
                     0.6481913068251722,
@@ -304,7 +518,8 @@
             }
         },
         "name": "box_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/box_mesh_0.entity"
     },
     "ms_scene/entities/camera_mesh_0.entity": {
         "components": {
@@ -314,6 +529,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/camera_material.material"
                 ],
@@ -323,24 +539,25 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
+                    0,
                     5.762369302591362,
-                    0.0
+                    0
                 ],
                 "scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    1,
+                    1,
+                    1
                 ],
                 "translation": [
                     -2.6457887088869967,
-                    0.0,
+                    0,
                     -0.13101542979821112
                 ]
             }
         },
         "name": "camera_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/camera_mesh_0.entity"
     },
     "ms_scene/entities/chair_mesh_0.entity": {
         "components": {
@@ -350,6 +567,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/chair_material.material"
                 ],
@@ -359,9 +577,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
+                    0,
                     11.608373005049142,
-                    0.0
+                    0
                 ],
                 "scale": [
                     0.5725915565614126,
@@ -370,13 +588,14 @@
                 ],
                 "translation": [
                     -2.769506128115033,
-                    0.0,
+                    0,
                     0.933584575274344
                 ]
             }
         },
         "name": "chair_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/chair_mesh_0.entity"
     },
     "ms_scene/entities/clapper_mesh_0.entity": {
         "components": {
@@ -386,6 +605,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/clapper_material.material"
                 ],
@@ -395,9 +615,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
+                    0,
                     -68.81056786529774,
-                    0.0
+                    0
                 ],
                 "scale": [
                     0.18316022236121934,
@@ -406,13 +626,14 @@
                 ],
                 "translation": [
                     -2.7372378013345244,
-                    0.0,
+                    0,
                     1.1824745971015882
                 ]
             }
         },
         "name": "clapper_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/clapper_mesh_0.entity"
     },
     "ms_scene/entities/cone_mesh1_0.entity": {
         "components": {
@@ -422,6 +643,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/cone_material.material"
                 ],
@@ -431,9 +653,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
+                    0,
+                    0,
+                    0
                 ],
                 "scale": [
                     0.3816763426217863,
@@ -442,13 +664,14 @@
                 ],
                 "translation": [
                     -1.9322724203102333,
-                    0.0,
+                    0,
                     -0.3553267675085632
                 ]
             }
         },
         "name": "cone_mesh1",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/cone_mesh1_0.entity"
     },
     "ms_scene/entities/cone_mesh2_0.entity": {
         "components": {
@@ -458,6 +681,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/cone_material.material"
                 ],
@@ -467,9 +691,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
+                    0,
+                    0,
+                    0
                 ],
                 "scale": [
                     0.3816763426217863,
@@ -478,13 +702,14 @@
                 ],
                 "translation": [
                     -1.082120507674098,
-                    0.0,
+                    0,
                     2.6232906940870677
                 ]
             }
         },
         "name": "cone_mesh2",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/cone_mesh2_0.entity"
     },
     "ms_scene/entities/cone_mesh_0.entity": {
         "components": {
@@ -494,6 +719,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/cone_material.material"
                 ],
@@ -503,9 +729,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
+                    0,
+                    0,
+                    0
                 ],
                 "scale": [
                     0.3816763426217863,
@@ -514,13 +740,14 @@
                 ],
                 "translation": [
                     -2.1568615238991917,
-                    0.0,
+                    0,
                     -2.2880303511005953
                 ]
             }
         },
         "name": "cone_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/cone_mesh_0.entity"
     },
     "ms_scene/entities/flag_mesh_0.entity": {
         "components": {
@@ -530,6 +757,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/flag_material.material"
                 ],
@@ -539,9 +767,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
+                    0,
+                    0,
+                    0
                 ],
                 "scale": [
                     0.08445421563808027,
@@ -551,12 +779,13 @@
                 "translation": [
                     0.5403308648192359,
                     0.3457054502144998,
-                    0.0
+                    0
                 ]
             }
         },
         "name": "flag_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/flag_mesh_0.entity"
     },
     "ms_scene/entities/ladder_mesh_0.entity": {
         "components": {
@@ -566,6 +795,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/ladder_material.material"
                 ],
@@ -575,9 +805,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    180.0,
+                    180,
                     45.00000000000009,
-                    180.0
+                    180
                 ],
                 "scale": [
                     0.8996023609690551,
@@ -586,13 +816,14 @@
                 ],
                 "translation": [
                     -1.8956415687644528,
-                    0.0,
+                    0,
                     2.5827930690783742
                 ]
             }
         },
         "name": "ladder_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/ladder_mesh_0.entity"
     },
     "ms_scene/entities/lights_mesh1_0.entity": {
         "components": {
@@ -640,6 +871,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/lights_material.material"
                 ],
@@ -649,24 +881,25 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
+                    0,
                     -77.19451272956803,
-                    0.0
+                    0
                 ],
                 "scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    1,
+                    1,
+                    1
                 ],
                 "translation": [
                     1.207753360484152,
-                    0.0,
+                    0,
                     -4.256459188330764
                 ]
             }
         },
         "name": "lights_mesh2",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/lights_mesh2_0.entity"
     },
     "ms_scene/entities/lights_mesh_0.entity": {
         "components": {
@@ -676,6 +909,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/lights_material.material"
                 ],
@@ -685,24 +919,25 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
+                    0,
                     63.61522816206506,
-                    0.0
+                    0
                 ],
                 "scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    1,
+                    1,
+                    1
                 ],
                 "translation": [
-                    0.0,
-                    0.0,
+                    0,
+                    0,
                     3.80728616053101
                 ]
             }
         },
         "name": "lights_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/lights_mesh_0.entity"
     },
     "ms_scene/entities/microphone_mesh_0.entity": {
         "components": {
@@ -712,6 +947,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/microphone_material.material"
                 ],
@@ -721,24 +957,25 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
+                    0,
                     -38.439735619129046,
-                    0.0
+                    0
                 ],
                 "scale": [
-                    1.0,
-                    1.0,
-                    1.0
+                    1,
+                    1,
+                    1
                 ],
                 "translation": [
                     -1.8593440334673825,
-                    0.0,
+                    0,
                     -3.567767253785366
                 ]
             }
         },
         "name": "microphone_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/microphone_mesh_0.entity"
     },
     "ms_scene/entities/monitor_mesh1_0.entity": {
         "components": {
@@ -748,6 +985,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/monitor_material.material"
                 ],
@@ -757,9 +995,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    180.0,
+                    180,
                     -1.0233074735872671,
-                    180.0
+                    180
                 ],
                 "scale": [
                     0.16480758739670442,
@@ -774,7 +1012,8 @@
             }
         },
         "name": "monitor_mesh1",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/monitor_mesh1_0.entity"
     },
     "ms_scene/entities/monitor_mesh_0.entity": {
         "components": {
@@ -784,6 +1023,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/monitor_material.material"
                 ],
@@ -793,9 +1033,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    180.0,
+                    180,
                     45.00000000000009,
-                    180.0
+                    180
                 ],
                 "scale": [
                     0.16480758739670442,
@@ -810,7 +1050,8 @@
             }
         },
         "name": "monitor_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/monitor_mesh_0.entity"
     },
     "ms_scene/entities/moonlander_mesh_0.entity": {
         "components": {
@@ -820,6 +1061,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/moonlander_material.material"
                 ],
@@ -829,9 +1071,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    180.0,
+                    180,
                     34.21429233775528,
-                    180.0
+                    180
                 ],
                 "scale": [
                     1.861907397580489,
@@ -846,7 +1088,8 @@
             }
         },
         "name": "moonlander_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/moonlander_mesh_0.entity"
     },
     "ms_scene/entities/platform_mesh_0.entity": {
         "components": {
@@ -894,6 +1137,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/sand_material.material"
                 ],
@@ -903,9 +1147,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
+                    0,
+                    0,
+                    0
                 ],
                 "scale": [
                     1.9582767686807374,
@@ -915,12 +1159,13 @@
                 "translation": [
                     1.3949629885900938,
                     0.157886327352594,
-                    0.0
+                    0
                 ]
             }
         },
         "name": "sand",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/sand_0.entity"
     },
     "ms_scene/entities/table_mesh_0.entity": {
         "components": {
@@ -930,6 +1175,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/table_material.material"
                 ],
@@ -939,9 +1185,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
+                    0,
                     -23.758002177082954,
-                    0.0
+                    0
                 ],
                 "scale": [
                     0.8163886064760902,
@@ -950,13 +1196,14 @@
                 ],
                 "translation": [
                     -3.034858588530865,
-                    0.0,
+                    0,
                     -1.4415155390086292
                 ]
             }
         },
         "name": "table_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/table_mesh_0.entity"
     },
     "ms_scene/entities/trigger_mesh_0.entity": {
         "components": {
@@ -966,6 +1213,7 @@
             "meshRenderer": {
                 "castShadows": true,
                 "cullMode": "Dynamic",
+                "hidden": false,
                 "materialRefs": [
                     "ms_scene/materials/trigger_material.material"
                 ],
@@ -975,9 +1223,9 @@
             "transform": {
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
-                    0.0,
-                    -0.0,
-                    0.0
+                    0,
+                    0,
+                    0
                 ],
                 "scale": [
                     0.3377729198385035,
@@ -986,13 +1234,14 @@
                 ],
                 "translation": [
                     -3.333042854567323,
-                    0.0,
+                    0,
                     -1.8089624691847468
                 ]
             }
         },
         "name": "trigger_mesh",
-        "nodeType": "Mesh"
+        "nodeType": "Mesh",
+        "ref": "ms_scene/entities/trigger_mesh_0.entity"
     },
     "ms_scene/materials/backdrop_material.material": {
         "blendState": {
@@ -1091,7 +1340,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "box_material",
+        "ref": "ms_scene/materials/box_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -1104,19 +1363,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1125,42 +1384,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -1171,7 +1430,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "camera_material",
+        "ref": "ms_scene/materials/camera_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -1184,19 +1453,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1205,42 +1474,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -1251,7 +1520,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "chair_material",
+        "ref": "ms_scene/materials/chair_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -1264,19 +1543,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1285,42 +1564,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -1331,7 +1610,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "clapper_material",
+        "ref": "ms_scene/materials/clapper_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -1344,19 +1633,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1365,42 +1654,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -1411,7 +1700,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "cone_material",
+        "ref": "ms_scene/materials/cone_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -1424,19 +1723,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1445,42 +1744,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -1491,7 +1790,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "flag_material",
+        "ref": "ms_scene/materials/flag_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -1504,19 +1813,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1525,42 +1834,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -1571,7 +1880,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "ladder_material",
+        "ref": "ms_scene/materials/ladder_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -1584,19 +1903,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1605,42 +1924,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -1651,8 +1970,18 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "lights_material",
-        "renderQueue": -1,
+        "ref": "ms_scene/materials/lights_material.material",
+        "renderQueue": 1000,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
             "DIFFUSE_MAP": {
@@ -1664,19 +1993,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1685,42 +2014,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -1731,7 +2060,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "microphone_material",
+        "ref": "ms_scene/materials/microphone_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -1744,19 +2083,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1765,42 +2104,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -1811,7 +2150,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "monitor_material",
+        "ref": "ms_scene/materials/monitor_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -1824,19 +2173,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1845,42 +2194,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -1891,7 +2240,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "moonlander_material",
+        "ref": "ms_scene/materials/moonlander_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -1904,19 +2263,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -1925,42 +2284,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -2061,7 +2420,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "sand_material",
+        "ref": "ms_scene/materials/sand_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -2074,19 +2443,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -2095,42 +2464,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -2141,7 +2510,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "table_material",
+        "ref": "ms_scene/materials/table_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -2154,19 +2533,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -2175,42 +2554,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -2221,7 +2600,17 @@
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
         "name": "trigger_material",
+        "ref": "ms_scene/materials/trigger_material.material",
         "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
@@ -2234,19 +2623,19 @@
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0.0
+                "value": 0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialDiffuse": {
@@ -2255,42 +2644,42 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1.0
+                    1
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.0,
-                    0.0,
-                    0.0,
-                    1.0
+                    0,
+                    0,
+                    0,
+                    1
                 ]
             },
             "materialSpecularPower": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "opacity": {
                 "enabled": true,
-                "value": 1.0
+                "value": 1
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0.0
+                "value": 0
             }
         }
     },
@@ -3500,7 +3889,12 @@
             "ms_scene/images/table.png",
             "ms_scene/images/trigger.png",
             "ms_scene/images/sand.png",
-            "ms_scene/images/platform.png"
+            "ms_scene/images/platform.png",
+            "ms_scene/entities/SpotLight.entity",
+            "ms_scene/entities/SpotLight_0.entity",
+            "ms_scene/entities/SpotLight_1.entity",
+            "entities/Sphere_0.entity",
+            "entities/Sphere_1.entity"
         ],
         "name": "ms_scene",
         "ref": "ms_scene/ms_scene.group"
@@ -3842,10 +4236,10 @@
         "wrapV": "Repeat"
     },
     "posteffects/Bleach.posteffect": {
-        "enabled": false,
+        "enabled": true,
         "name": "Bleach",
         "options": {
-            "opacity": 1
+            "opacity": 0.18
         },
         "ref": "posteffects/Bleach.posteffect"
     },
@@ -3855,17 +4249,17 @@
         "options": {
             "brightness": 0,
             "contrast": 0,
-            "opacity": 26,
+            "opacity": 31,
             "size": 2
         },
         "ref": "posteffects/Bloom.posteffect"
     },
     "posteffects/Contrast.posteffect": {
-        "enabled": false,
+        "enabled": true,
         "name": "Contrast",
         "options": {
-            "brightness": 0,
-            "contrast": 0
+            "brightness": -0.01,
+            "contrast": 0.18
         },
         "ref": "posteffects/Contrast.posteffect"
     },
@@ -3912,7 +4306,7 @@
             0.78,
             1
         ],
-        "created": "2013-12-06T07:48:42.974520",
+        "created": "2013-12-06T09:31:39.726519",
         "deleted": false,
         "edit": [],
         "entityRefs": [
@@ -3939,9 +4333,12 @@
             "ms_scene/entities/sand_0.entity",
             "ms_scene/entities/chair_mesh_0.entity",
             "ms_scene/entities/cone_mesh_0.entity",
-            "entities/SpotLight.entity",
-            "entities/SpotLight_0.entity",
-            "entities/SpotLight_1.entity"
+            "ms_scene/entities/SpotLight.entity",
+            "ms_scene/entities/SpotLight_0.entity",
+            "ms_scene/entities/SpotLight_1.entity",
+            "entities/Sphere.entity",
+            "entities/Sphere_0.entity",
+            "entities/Sphere_1.entity"
         ],
         "fogColor": [
             1,
@@ -3951,18 +4348,18 @@
         "fogFar": 1000,
         "fogNear": 0,
         "globalAmbient": [
-            0.19090909090909092,
-            0.18396694214876033,
-            0.18396694214876033
+            0.3545454545454545,
+            0.3545454545454545,
+            0.3545454545454545
         ],
         "groupRefs": [
             "ms_scene/ms_scene.group",
             "root.group"
         ],
-        "id": "CP_4BTn_SKyjOfYkzaYD4A",
+        "id": "ATWyvqrxSo6xlxQbncOArw",
         "licenseType": "CC0",
         "modified": "2013-12-05T13:58:05.393557",
-        "name": "Amazing Lunar Lander",
+        "name": "Amazing lunar lander",
         "originalLicenseType": null,
         "own": [
             "Y70O6QqySi2VpuQlm9gmzQ"
@@ -3978,12 +4375,12 @@
             "posteffects/Bleach.posteffect"
         ],
         "public": true,
-        "publishedTime": "2013-12-06T07:58:45.851765",
-        "publishedURL": "http://goote.ch/CP_4BTn_SKyjOfYkzaYD4A",
+        "publishedTime": "2013-12-06T09:47:23.858034",
+        "publishedURL": "http://goote.ch/ATWyvqrxSo6xlxQbncOArw",
         "ref": "project.project",
         "screenshot": "images/screenshot.png",
         "shareButtons": false,
-        "shareURL": "http://goote.ch/CP_4BTn_SKyjOfYkzaYD4A?v=2013-12-06T07:58:45.851789",
+        "shareURL": "http://goote.ch/ATWyvqrxSo6xlxQbncOArw?v=2013-12-06T09:47:23.858054",
         "skybox": {
             "environmentType": 1,
             "imageUrls": [
@@ -4012,9 +4409,6 @@
         "libraryRefs": [
             "scripts/DefaultToolCameraScript.script",
             "entities/DefaultToolCamera.entity",
-            "entities/SpotLight.entity",
-            "entities/SpotLight_0.entity",
-            "entities/SpotLight_1.entity",
             "posteffects/Sepia.posteffect",
             "posteffects/Bloom.posteffect",
             "posteffects/Grain.posteffect",
@@ -4022,6 +4416,8 @@
             "posteffects/RgbShift.posteffect",
             "posteffects/Vignette.posteffect",
             "posteffects/Bleach.posteffect",
+            "entities/Sphere.entity",
+            "materials/Material.material",
             "images/screenshot.png"
         ],
         "name": "root",
@@ -4038,9 +4434,9 @@
             "invertedX": false,
             "invertedY": false,
             "lookAtPoint": [
-                -0.6514200568199158,
-                13.98888874053955,
-                2.5777204036712646
+                -46.70000457763672,
+                32.2481803894043,
+                11.8361234664917
             ],
             "maxAscent": 1.5699236621688994,
             "maxAzimuth": 4.71238898038469,
@@ -4049,9 +4445,9 @@
             "minAzimuth": 1.5707963267948966,
             "minZoomDistance": 0.1,
             "spherical": [
-                65.96183776855469,
-                2.9057955741882324,
-                0.26499930024147034
+                6.743632793426514,
+                2.8708009719848633,
+                0.2600005269050598
             ],
             "turnSpeedHorizontal": 0.005,
             "turnSpeedVertical": 0.005,
