@@ -5,6 +5,8 @@ require([
 	'goo/loaders/DynamicLoader',
 	'goo/math/Vector3',
 
+	'goo/entities/EntityUtils',
+
 	'goo/renderer/Camera',
 	'goo/entities/components/CameraComponent',
 
@@ -12,7 +14,9 @@ require([
 	'goo/scripts/OrbitCamControlScript',
 
 	'goo/renderer/light/DirectionalLight',
-	'goo/entities/components/LightComponent'
+	'goo/entities/components/LightComponent',
+
+	'js/Lander'
 
 ], function (
 	GooRunner,
@@ -21,6 +25,8 @@ require([
 	DynamicLoader,
 	Vector3,
 
+	EntityUtils,
+
 	Camera,
 	CameraComponent,
 
@@ -28,7 +34,9 @@ require([
 	OrbitCamControlScript,
 
 	DirectionalLight,
-	LightComponent
+	LightComponent,
+
+	Lander
 ) {
 	'use strict';
 
@@ -38,32 +46,6 @@ require([
 		if (window.location.protocol==='file:') {
 			alert('You need to run this webpage on a server. Check the code for links and details.');
 			return;
-
-			/*
-
-			Loading scenes uses AJAX requests, which require that the webpage is accessed via http. Setting up 
-			a web server is not very complicated, and there are lots of free options. Here are some suggestions 
-			that will do the job and do it well, but there are lots of other options.
-
-			- Windows
-
-			There's Apache (http://httpd.apache.org/docs/current/platform/windows.html)
-			There's nginx (http://nginx.org/en/docs/windows.html)
-			And for the truly lightweight, there's mongoose (https://code.google.com/p/mongoose/)
-
-			- Linux
-			Most distributions have neat packages for Apache (http://httpd.apache.org/) and nginx
-			(http://nginx.org/en/docs/windows.html) and about a gazillion other options that didn't 
-			fit in here. 
-			One option is calling 'python -m SimpleHTTPServer' inside the unpacked folder if you have python installed.
-
-
-			- Mac OS X
-
-			Most Mac users will have Apache web server bundled with the OS. 
-			Read this to get started: http://osxdaily.com/2012/09/02/start-apache-web-server-mac-os-x/
-
-			*/
 		}
 
 		// Make sure user is running Chrome/Firefox and that a WebGL context works
@@ -108,11 +90,28 @@ require([
 
 			loader.loadFromBundle('project.project', 'root.bundle', {recursive: false, preloadBinaries: true}).then(function(configs) {
 
-				// This code will be called when the project has finished loading.
-
+				// Set up the canvas and renderer
 				goo.renderer.domElement.id = 'goo';
 				document.body.appendChild(goo.renderer.domElement);
 
+				// Load entities using a cache in case we want to clone them
+				var entityCache = [];
+				entityCache['lander'] = loader.getCachedObjectForRef('ms_scene/entities/moonlander_mesh_0.entity');
+				for (var each in entityCache) {
+					entityCache[each].removeFromWorld();
+				}
+
+				// Load the entities from the cache
+				var landerEntity = EntityUtils.clone(goo.world, entityCache['lander']);
+				console.log(landerEntity);
+
+				// Use the entity to create a Lander object
+				var lander = new Lander(landerEntity);
+				// Init lander with position and scale
+				lander.init(new Vector3(15, 20, -15), 15.0);
+
+				// Go go go!
+				console.log('Starting game loop');
 				goo.startGameLoop();
 
 			}).then(null, function(e) {
