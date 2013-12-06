@@ -98,10 +98,10 @@ AmmoDebugShapeCreator
 		var particleSystemEntity = ParticleSystemUtils.createParticleSystemEntity(
 			this.goo,
 		    {
-		    	totalParticlesToSpawn : 3,
+		    	totalParticlesToSpawn : 1,
 				releaseRatePerSecond : 5,
 				minLifetime : 0.5,
-				maxLifetime : 1.0,
+				maxLifetime : 1.5,
 				getEmissionVelocity : function (particle, particleEntity) {
 					var vec3 = particle.velocity;
 					ParticleUtils.getRandomVelocityOffY(vec3, 0, Math.PI * 5 / 180, 5);
