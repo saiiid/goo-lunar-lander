@@ -220,7 +220,7 @@ require([
 			// PhysicalWorld.addPhysicalWorldMesh(meshData, pos, scale);
 		}
 
-		createTestSphere();
+		// createTestSphere();
 
 		PhysicalWorld.addStaticBox(new Vector3(0, 6.5, 0), 100, 9, 100, goo.world);
 	};

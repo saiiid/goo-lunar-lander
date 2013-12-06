@@ -52,7 +52,7 @@ AmmoDebugShapeCreator
 		this.thrusterParticleMaterial.depthState.write = false;
 		this.thrusterParticleMaterial.renderQueue = 2001;
 
-		this.mainForce = new Ammo.btVector3(0, 5, 0);
+		this.mainForce = new Ammo.btVector3(0, 10, 0);
 	};
 
 	Lander.prototype = Object.create(Prop.prototype);
@@ -66,12 +66,12 @@ AmmoDebugShapeCreator
 		var radius = 3;
 		var mass = 10;
 		// var position = this.entity.transformComponent.worldTransform.translation;
-		var position = new Vector3(15, 40, -10);
+		var position = new Vector3(15, 20, -10);
 		var rigidBody = PhysicalWorld.createAmmoJSSphere(radius, position, mass);
 		PhysicalWorld.addRigidBody(rigidBody);
 		this.addScript(PhysicalWorld.createAmmoComponentScript(rigidBody));
-		var debugEntity = AmmoDebugShapeCreator.createSphere(this.entity, rigidBody, radius);
-		debugEntity.setComponent(PhysicalWorld.createAmmoComponentScript(rigidBody));
+		//var debugEntity = AmmoDebugShapeCreator.createSphere(this.entity, rigidBody, radius);
+		//debugEntity.setComponent(PhysicalWorld.createAmmoComponentScript(rigidBody));
 		return rigidBody;
 	};
 
