@@ -920,7 +920,7 @@
                 "parentRef": "ms_scene/entities/RootNode.entity",
                 "rotation": [
                     0,
-                    63.61522816206506,
+                    0,
                     0
                 ],
                 "scale": [
@@ -929,9 +929,9 @@
                     1
                 ],
                 "translation": [
-                    0,
-                    0,
-                    3.80728616053101
+                    -1.5832030773162842,
+                    5.477500053530093e-08,
+                    0.12822280824184418
                 ]
             }
         },
@@ -4314,9 +4314,7 @@
             "ms_scene/entities/lights_mesh_0.entity",
             "ms_scene/entities/flag_mesh_0.entity",
             "ms_scene/entities/trigger_mesh_0.entity",
-            "ms_scene/entities/lights_mesh2_0.entity",
             "ms_scene/entities/backdrop_mesh_0.entity",
-            "ms_scene/entities/lights_mesh1_0.entity",
             "ms_scene/entities/monitor_mesh1_0.entity",
             "ms_scene/entities/platform_mesh_0.entity",
             "ms_scene/entities/box_mesh_0.entity",
@@ -4334,11 +4332,7 @@
             "ms_scene/entities/chair_mesh_0.entity",
             "ms_scene/entities/cone_mesh_0.entity",
             "ms_scene/entities/SpotLight.entity",
-            "ms_scene/entities/SpotLight_0.entity",
-            "ms_scene/entities/SpotLight_1.entity",
-            "entities/Sphere.entity",
-            "entities/Sphere_0.entity",
-            "entities/Sphere_1.entity"
+            "entities/Sphere.entity"
         ],
         "fogColor": [
             1,
@@ -4375,12 +4369,12 @@
             "posteffects/Bleach.posteffect"
         ],
         "public": true,
-        "publishedTime": "2013-12-06T09:56:33.319482",
+        "publishedTime": "2013-12-06T10:05:59.872426",
         "publishedURL": "http://goote.ch/b4_KpQtsRWCqwpUs6sOggA",
         "ref": "project.project",
         "screenshot": "images/screenshot.png",
         "shareButtons": false,
-        "shareURL": "http://goote.ch/b4_KpQtsRWCqwpUs6sOggA?v=2013-12-06T09:56:33.319504",
+        "shareURL": "http://goote.ch/b4_KpQtsRWCqwpUs6sOggA?v=2013-12-06T10:05:59.872448",
         "skybox": {
             "environmentType": 1,
             "imageUrls": [
@@ -4437,9 +4431,9 @@
             "invertedX": false,
             "invertedY": false,
             "lookAtPoint": [
-                0.36237916350364685,
-                21.26041030883789,
-                -1.849816918373108
+                -1.726966142654419,
+                13.654972076416016,
+                0.985072672367096
             ],
             "maxAscent": 1.5699236621688994,
             "maxAzimuth": 4.71238898038469,
@@ -4448,9 +4442,9 @@
             "minAzimuth": 1.5707963267948966,
             "minZoomDistance": 0.1,
             "spherical": [
-                53.61653137207031,
-                2.815790891647339,
-                0.22000014781951904
+                79.61392211914062,
+                2.9257967472076416,
+                0.36999988555908203
             ],
             "turnSpeedHorizontal": 0.005,
             "turnSpeedVertical": 0.005,

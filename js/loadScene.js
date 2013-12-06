@@ -16,6 +16,7 @@ require([
 	'goo/renderer/light/DirectionalLight',
 	'goo/entities/components/LightComponent',
 
+	'js/Prop',
 	'js/Lander',
 	'js/LanderKeyScript',
 
@@ -39,6 +40,7 @@ require([
 	DirectionalLight,
 	LightComponent,
 
+	Prop,
 	Lander,
 	LanderKeyScript,
 
@@ -117,7 +119,8 @@ require([
 				// Use the entity to create a Lander object
 				var lander = new Lander(landerEntity);
 				// Init lander with position and scale
-				lander.init(new Vector3(15, 20, -15), 15.0);
+				lander.initPosition(new Vector3(15, 20, -15), 15.0);
+				lander.initPhysics();
 
 				lander.addScript(new LanderKeyScript(lander, {
 					nearLeftKey: 65, 	// A

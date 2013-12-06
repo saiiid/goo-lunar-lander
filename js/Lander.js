@@ -3,42 +3,30 @@ define([
 'goo/entities/components/TransformComponent',
 'goo/entities/components/ScriptComponent',
 
+'js/Prop',
 'js/physics/PhysicalWorld'
 ],
 function (
 Vector3,
 TransformComponent,
 ScriptComponent,
-
+Prop,
 PhysicalWorld
 ) {
 
+
 	function Lander(entity, properties, goo) {
-		this.goo = goo;
-		this.entity = entity;
-		entity.addToWorld();
+		console.log("Creating Lander");
+		Prop.call(this, entity, properties, goo);
+		this.name = "Lander";
 	};
 
-	Lander.prototype.init = function(position, scale) {
+	Lander.prototype = Object.create(Prop.prototype);
 
-		console.log('Initializing Lander');
-
-		this.scriptComponent = new ScriptComponent();
-		this.entity.setComponent(this.scriptComponent);
-
-		this.entity.transformComponent.setScale(scale, scale, scale);
-		this.entity.transformComponent.addTranslation(position.x, position.y, position.z);
-		this.entity.transformComponent.setUpdated();
-
+	Lander.prototype.initPhysics = function() {
+		console.log('Initializing Lander physics');
 		this.rigidBody = {}
-
-		this.buildRigidBody(position, scale);
-
-		this.entity.addToWorld();
-
-		this.roll = 0.0;
-		this.pitch = 0.0;
-		this.yaw = 0.0;
+		this.buildRigidBody(this.position, this.scale);
 	};
 
 	Lander.prototype.buildRigidBody = function(position, scale) {
@@ -59,10 +47,6 @@ PhysicalWorld
 
 	Lander.prototype.addYaw = function(angle) {
 		this.yaw += angle;
-	};
-
-	Lander.prototype.addScript = function(script) {
-		this.scriptComponent.scripts.push(script);
 	};
 
 	// Set rotation according to roll, pitch and yaw params
