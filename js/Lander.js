@@ -1,13 +1,16 @@
 define([
 'goo/math/Vector3',
 'goo/entities/components/TransformComponent',
-'goo/entities/components/ScriptComponent'
+'goo/entities/components/ScriptComponent',
 
+'js/physics/PhysicalWorld'
 ],
 function (
 Vector3,
 TransformComponent,
-ScriptComponent
+ScriptComponent,
+
+PhysicalWorld
 ) {
 
 	function Lander(entity, properties, goo) {
@@ -19,17 +22,31 @@ ScriptComponent
 	Lander.prototype.init = function(position, scale) {
 
 		console.log('Initializing Lander');
+
+		this.scriptComponent = new ScriptComponent();
+		this.entity.setComponent(this.scriptComponent);
+
 		this.entity.transformComponent.setScale(scale, scale, scale);
 		this.entity.transformComponent.addTranslation(position.x, position.y, position.z);
 		this.entity.transformComponent.setUpdated();
+
+		this.rigidBody = {}
+
+		this.buildRigidBody(position, scale);
+
 		this.entity.addToWorld();
 
 		this.roll = 0.0;
 		this.pitch = 0.0;
 		this.yaw = 0.0;
+	};
 
-		this.scriptComponent = new ScriptComponent();
-		this.entity.setComponent(this.scriptComponent);
+	Lander.prototype.buildRigidBody = function(position, scale) {
+		var radius = 2.0 * scale;
+		var mass = 10;
+		this.rigidBody = PhysicalWorld.createAmmoJSSphere(radius, [position.x, position.y, position.z], mass);
+		PhysicalWorld.addRigidBody(this.rigidBody);
+		this.addScript(PhysicalWorld.createAmmoComponentScript(this.rigidBody));
 	};
 
 	Lander.prototype.addRoll = function(angle) {
@@ -52,7 +69,7 @@ ScriptComponent
 	Lander.prototype.updateRotation = function() {
 		console.log('Updating Lander rotation');
 		this.entity.transformComponent.setRotation(this.roll, this.pitch, this.yaw);
-		this.entity.transformComponent.setUpdated();	
+		this.entity.transformComponent.setUpdated();
 	};
 
 	// Fire numbered thruster

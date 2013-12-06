@@ -88,7 +88,8 @@ require([
 			goo.world.setSystem(fsm);
 			goo.world.setSystem(new HowlerSystem());
 
-
+			// Init physics
+			PhysicalWorld.initPhysics();
 
 			// The loader takes care of loading the data
 			var loader = new DynamicLoader({
@@ -122,8 +123,7 @@ require([
 					nearLeftKey: 65, 	// A
 					farLeftKey: 81,  	// Q
 					nearRightKey: 68,	// D
-					farRightKey: 69, 	// E
-					firingRate: 10  	// Maximum events per second
+					farRightKey: 69 	// E
 				}));
 
 

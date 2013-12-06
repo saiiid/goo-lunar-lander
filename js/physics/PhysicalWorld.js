@@ -1,4 +1,5 @@
-define(['goo/entities/components/ScriptComponent',
+define([
+	'goo/entities/components/ScriptComponent',
 	'goo/entities/EntityUtils',
 	'goo/math/Quaternion',
 	'goo/math/Vector3'],
@@ -103,8 +104,7 @@ define(['goo/entities/components/ScriptComponent',
 		}
 
 		function initPhysics() {
-			console.log("Init Physics")
-
+			// Temp worker vars.
 			physTransform = new Ammo.btTransform();
 			quaternion = new Quaternion();
 			btVec = new Ammo.btVector3();
@@ -120,11 +120,12 @@ define(['goo/entities/components/ScriptComponent',
 			setInterval(function(){ammoWorld.stepSimulation(1/60, 5)}, 1000/60);
 		}
 
-		function createAmmoComponentScript() {
+		function createAmmoComponentScript(rigidBody) {
 			var script = new ScriptComponent();
 			script.run = function(entity, tpf, environment) {
 				var transformComp = entity.getComponent("transformComponent");
-				entity.ammoComponent.getMotionState().getWorldTransform(physTransform);
+				rigidBody.getMotionState().getWorldTransform(physTransform);
+				// entity.ammoComponent.getMotionState().getWorldTransform(physTransform);
 				var origin = physTransform.getOrigin();
 				transformComp.setTranslation(origin.x(), origin.y(), origin.z());
 				var pquat = physTransform.getRotation();
@@ -134,13 +135,13 @@ define(['goo/entities/components/ScriptComponent',
 			return script
 		}
 
-		function createAmmoJSSphere(radius, pos, velocity, mass) {
+		function createAmmoJSSphere(radius, pos, mass) {
 
 			var startTransform = new Ammo.btTransform();
 			startTransform.setIdentity();
 
 			startTransform.getOrigin().setX(pos[0]);
-			startTransform.getOrigin().setY(pos[1]+radius);
+			startTransform.getOrigin().setY(pos[1]);
 			startTransform.getOrigin().setZ(pos[2]);
 
 			var localInertia = new Ammo.btVector3(0, 0, 0);
@@ -150,9 +151,7 @@ define(['goo/entities/components/ScriptComponent',
 			var motionState = new Ammo.btDefaultMotionState( startTransform );
 			var rbInfo = new Ammo.btRigidBodyConstructionInfo( mass, motionState, shape, localInertia );
 			var rBody = new Ammo.btRigidBody( rbInfo );
-			rBody.setLinearVelocity(new Ammo.btVector3(velocity[0], velocity[1], velocity[2]));
-			rBody.setFriction(5);
-			ammoWorld.addRigidBody(rBody);
+
 			return rBody;
 		}
 
@@ -189,12 +188,17 @@ define(['goo/entities/components/ScriptComponent',
 			destroy(component);
 		}
 
+		function addRigidBody(rigidBody) {
+			ammoWorld.addRigidBody(rigidBody);
+		}
+
 		return {
 			initPhysics:initPhysics,
 			addPhysicalWorldMesh:addPhysicalWorldMesh,
 			createAmmoJSSphere:createAmmoJSSphere,
 			createAmmoComponentScript:createAmmoComponentScript,
 			attachSphericalMovementScript:attachSphericalMovementScript,
-			removeAmmoComponent:removeAmmoComponent
+			removeAmmoComponent:removeAmmoComponent,
+			addRigidBody:addRigidBody
 		}
 	});
