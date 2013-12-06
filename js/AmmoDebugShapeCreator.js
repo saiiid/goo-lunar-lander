@@ -39,6 +39,7 @@ function (
 			var entity = EntityUtils.createTypicalEntity(parentEntity._world, shape, defaultMaterial);
 			this._setChild(entity, parentEntity);
 		}
+		entity.transformComponent.setTranslation(position);
 		entity.addToWorld();
 	};
 

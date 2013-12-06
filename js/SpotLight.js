@@ -4,14 +4,16 @@ define([
 'goo/entities/components/ScriptComponent',
 
 'js/Prop',
-'js/physics/PhysicalWorld'
+'js/physics/PhysicalWorld',
+'js/AmmoDebugShapeCreator'
 ],
 function (
 Vector3,
 TransformComponent,
 ScriptComponent,
 Prop,
-PhysicalWorld
+PhysicalWorld,
+AmmoDebugShapeCreator
 ) {
 
 	function SpotLight(entity) {
@@ -36,6 +38,7 @@ PhysicalWorld
 		var rigidBody = PhysicalWorld.createAmmoJSSphere(radius, position, mass);
 		PhysicalWorld.addRigidBody(rigidBody);
 		this.addScript(PhysicalWorld.createAmmoComponentScript(rigidBody));
+		AmmoDebugShapeCreator.createSphere(this.entity, radius);
 		return rigidBody;
 	};
 

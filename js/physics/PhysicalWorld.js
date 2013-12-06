@@ -209,7 +209,7 @@ define([
 			var groundAmmo = new Ammo.btRigidBody( rbInfo );
 			ammoWorld.addRigidBody(groundAmmo);
 
-			AmmoDebugShapeCreator.createBox(null, width, height, depth, world);
+			AmmoDebugShapeCreator.createBox(null, width, height, depth, world, pos);
 		}
 
 		return {
